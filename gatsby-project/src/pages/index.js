@@ -1,21 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
 
-const IndexPage = () => (
+export default () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hello world</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <h1 class="mb-5 d-flex justify-content-center  font-weight-bold">eAgrar</h1>
+    <h3 class="mb-5 d-flex justify-content-center ">Nova dimenzija poljoprivrede</h3>
   </Layout>
 )
-
-export default IndexPage

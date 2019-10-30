@@ -1,0 +1,9 @@
+.signin{
+    background-color:#17a2b8;
+    color:white;
+    border-radius: 40px;
+}
+
+.nav-item:active{
+    border-bottom: 2px #ffffff;
+}
