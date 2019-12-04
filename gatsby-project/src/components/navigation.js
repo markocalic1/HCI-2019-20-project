@@ -1,10 +1,24 @@
-/** @jsx jsx */
-import { jsx, useThemeUI, Header , Button} from "theme-ui"
-import React from "react"
+import React, { useState } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
 
+  } from 'reactstrap';
 
-import { Link } from "gatsby"
-import logo from "../images/logo.png"
+  import 'bootstrap/dist/css/bootstrap.min.css';
+  import mainLogo from"../images/logo.png";
+  import { Button } from 'reactstrap';
+  import navbarStyles from "./navbar.module.css"
+  import { location } from '@reach/router';
 
 // const menuItems = [
 //   {
@@ -35,94 +49,51 @@ import logo from "../images/logo.png"
 //     text: "Q&A",
 //     path: "/questions",
 //   },
-// ]
+const isCurrent =(path,href) => {
 
-const NavLink = ({ children, ...prop }) => {
-  const { theme } = useThemeUI()
+  return (path===href) ? true : false
+}
 
-  return (
-    <Link
-      {...prop}
-      sx={{
-        display: "inline-block",
-        px: 2,
-        ml: 3,
-        color: "text",
-        textDecoration: "none",
-        whiteSpace: "nowrap",
-        letterSpacing: "wide",
-        lineHeight: theme =>
-          `calc(${theme.sizes.logo} - 2 * ${theme.sizes.navLinkBorder})`,
-        borderTop: theme => `${theme.sizes.navLinkBorder} solid transparent`,
-        borderBottom: theme => `${theme.sizes.navLinkBorder} solid transparent`,
-        transition: "all 0.25s linear",
-        "&:hover": {
-          color: "primaryHover",
-          borderBottom: theme =>
-            `${theme.sizes.navLinkBorder} solid ${theme.colors.text}`,
-        },
-      }}
-      activeStyle={{
-        color: theme.colors.text,
-        borderBottom: `${theme.sizes.navLinkBorder} solid ${theme.colors.text}`,
-      }}
-    >
-      {children}
-    </Link>
-  )
+const isActive = (path,href) => {
+  return isCurrent(path,href) ? {className: "active"}  : false
 }
 
 const NavLinks = ({ menuItems }) => (
   <>
     {menuItems.map(menuItem => (
-      <NavLink key={menuItem.path} to={menuItem.path}>
-        {menuItem.text}
-      </NavLink>
+      
+      <NavItem >
+        <NavLink className={navbarStyles.navlink} active={isCurrent(window.location.pathname,menuItem.path)}  key={menuItem.path} href={menuItem.path}>{menuItem.text}</NavLink>
+        {console.log(window.location.pathname)}
+       
+      </NavItem>
     ))}
   </>
 )
 
 const Navigation = ({ menuItems }) => {
-  return (
-    <Header
-      sx={{
-        justifyContent: "space-between",
-        alignContent: "center",
-      
-      }}
-    >
-      <Link to="/" sx={{ display: "flex", alignItems: "center" }}>
-        <img
-          src={logo}
-          sx={{
-            height: "logo",
-            width: "logo",
-          }}
-          alt="logo"
-        />
-        <h3 sx={{
-          fontSize: [1,2,3,4, 5, 6],
-          fontWeight: "medium",
-        }}>eAgrar</h3>
-      </Link>
-      
-      <nav>
-        <NavLinks menuItems={menuItems} />
-      </nav>
+  
+    const [isOpen, setIsOpen] = useState(false);
 
-      <Link to="/login"  >
-        <button ml="auto" sx={{
-                backgroundColor:"primary",
-                alignItems: "center",
-                color:"text",
-                borderRadius:"10px",
-                borderColor:"primary",
-                }}>
-        SIGN IN
-        </button>
-      </Link>
+    const toggle = () => setIsOpen(!isOpen);
+  return (
+    <div>
+        <Navbar color="light" className="navbar-dark bg-dark" light expand="md">
+        <NavbarBrand href="/" className=""><img  src={mainLogo} height="50" className="m-auto" alt="fireSpot"/>eAgrar</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mx-auto text-white" navbar>
+             <NavLinks menuItems={menuItems} />
+          </Nav>
+          <Button href="/login" className={navbarStyles.signin }>SIGN IN</Button>{' '}
+
+          </Collapse>
+        </Navbar>
+      </div>
+    
       
-    </Header>
+      
+      
   )
 }
 

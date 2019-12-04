@@ -1,9 +1,26 @@
-import React from "react"
-import Layout from "../components/layout"
 
-export default () => (
-  <Layout>
-    <h1 class="mb-5 d-flex justify-content-center  font-weight-bold">eAgrar</h1>
-    <h3 class="mb-5 d-flex justify-content-center ">Nova dimenzija poljoprivrede</h3>
-  </Layout>
-)
+import React from "react"
+
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import StyledBackgroundSection from "../components/background"
+import AboutSection from "../components/about"
+
+const IndexPage = ({ data }) => {
+
+ 
+    return (
+    <>
+        <Layout>
+         <SEO title="Naslovna" />
+        </Layout>
+        <StyledBackgroundSection></StyledBackgroundSection>
+        <AboutSection></AboutSection>
+       
+    </>
+  )
+}
+
+export default IndexPage
+
+

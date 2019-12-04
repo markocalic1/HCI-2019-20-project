@@ -1,12 +1,34 @@
 import React from "react"
-import Header from "./header"
+import { useStaticQuery, graphql } from "gatsby"
+import { Global } from "@emotion/core"
 
-export default ({ children }) => (
-  <div>
-  <Header siteTitle="eAgrar" />
-     {children}
-  </div>
-     )
+import Navigation from "../components/navigation"
 
 
-     
+
+const Layout = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          menuItems {
+            text
+            path
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <>
+      
+      
+        <Navigation menuItems={data.site.siteMetadata.menuItems} />
+
+
+    </>
+  )
+}
+
+export default Layout

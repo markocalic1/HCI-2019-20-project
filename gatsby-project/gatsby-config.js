@@ -2,9 +2,42 @@ module.exports = {
   siteMetadata: {
     title: `eAgrar`,
     description: `New dimension of agriculture`,
+    menuItems: [
+      {
+        text: "Home",
+        path: "/",
+      },
+      {
+        text: "Blog",
+        path: "/blog",
+      },
+      {
+        text: "Products",
+        path: "/products",
+      },
+      {
+        text: "Stations",
+        path: "/projekti",
+      },
+      {
+        text: "Rezultati",
+        path: "/rezultati",
+      },
+      {
+        text: "Ocjenjivanje",
+        path: "/ocjenjivanje",
+      },
+     
+    ],
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
