@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql ,useStaticQuery } from "gatsby"
-
-
+import Img from "gatsby"
+import Slideshow from "../components/slideshow"
 const AboutSection = ({ children }) => {
   const data = useStaticQuery(graphql`
     {
@@ -14,26 +14,29 @@ const AboutSection = ({ children }) => {
   `)
 
   return (
-    <>
-      <div className="container">
     
-
-    <h1>About {data.site.siteMetadata.title} system</h1>
-    <p>
-        eAgrar is a system for monitoring the condition of plants and weather in agricultural fields.
-    It is based on a network of sensing devices, allowing you to monitor microclimate conditions .
-
-    The sensor devices are ready to set up without the need for any additional infrastructure. The devices are battery-powered and have an autonomy of up to 10 years without charging . Sensor devices send data wirelessly to a base station that can be up to 5km away. The sensing device has the ability to measure temperature, humidity and air pressure, humidity and soil temperature, and leaf humidity.
-
-    All data is displayed in our web app's dashboard via icons, charts, and tables .
-
-    The system monitors and processes the data, and notifies users of the possible appearance of the disease (bumps, ashtrays, feather spores) so that they can act preventively to stop them.
-    It also notifies the user when frost conditions are created or when irrigation is needed.
-
-    By using the eAgrar system, you can earn savings in the use of chemicals, fuels and water. Using the system will also allow you to reduce crop damage and increase yields.
-    </p>
-</div>
-    </>
+      <div Tag="section" className="container mt-4">
+           <div className="row">
+                <div className="col-xs-12 col-md-10 col-md-offset-1 mx-auto">
+                    <div className="page-title text-center">
+                        <div className="space-10"></div>
+                        <h5 className="title">O eAgrar sustavu</h5>
+                        <div className="space-30"></div>
+                        <h3 className="blue-color">Sustav za praćenje stanja na Vašim poljoprivrednim usjevima i za pomoć u predviđanju pojave bolesti</h3>
+                        <div className="space-20"></div>
+                        <p>eAgrar je sustav za <strong>praćenje stanja</strong> biljaka i vremenskih uvjeta na poljoprivrednim poljima.
+                        <br /> Temelji se na mreži senzorskih uređaja što omogućuje praćenje <strong>mikroklimatskih uvjeta</strong>. 
+                        <br /><br/>Senzorski uređaji su spremni za postavljanje bez potrebne bilo kakve dodatne infrastrukture. Uređaji su napajani baterijski i imaju autonomiju <strong>do 10 godina bez punjenja</strong>. Senzorski uređaji šalju podatke bežično prema baznoj stanici koja može biti udaljena do 5km. Senzorski uređaj ima mogućnost mjerenja temperature, vlažnosti i tlaka zraka, vlažnosti i temperature tla, te vlažnosti lista. 
+                        <br/><br/>Svi podaci prikazuju se na nadzornoj ploči naše aplikacije putem <strong>ikona, grafikona i tablica</strong>.
+                        <br/><br/> <strong>Sustav prati i obrađuje</strong> podatke, te <strong>obavještava korisnike o mogućoj pojavi bolesti</strong> (plamenjača, pepelnica, peronospora) kako bi mogli preventivno djelovati s ciljem zaustavljanja pojave istih.
+                        <br/> Obavještava korisnika i kada se stvore <strong>uvjeti za pojavu mraza</strong> ili kada se stvori potreba za <strong>navodnjavanjem</strong>. 
+                        <br/><br/>Korištenjem eAgrar sustava možete ostvariti <strong>uštede</strong> u korištenju kemijskih sredstava, goriva i vode. Korištenje sustava će Vam omogućiti i smanjenje štete na usjevima i povećanje prinosa.</p>
+                    </div>
+                    <Slideshow></Slideshow>
+                </div>
+            </div>
+      </div>
+    
   )
 }
 

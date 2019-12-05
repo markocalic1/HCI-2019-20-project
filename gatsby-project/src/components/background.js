@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
@@ -22,14 +24,14 @@ const BackgroundSection = ({ className }) => (
       // Set ImageData.
       const imageData = data.desktop.childImageSharp.fluid
       return (
-        <div className={navbarStyles.overlay}>
+        <div className={navbarStyles.overlay} sx={{height:"88vh"}}>
             <BackgroundImage
                 Tag="section"
                 className={className}
                 fluid={imageData}
                 backgroundColor={`#040e18`}
                 >
-                <StyledInnerWrapper>
+                <StyledInnerWrapper sx={{fontSize:[2,3,4]}}>
                     <h2>eAgrar</h2>
                     <p>New way of agriculture</p>
                     <p>Make the best of your efforts</p>
@@ -47,8 +49,10 @@ const BackgroundSection = ({ className }) => (
 )
 
 const StyledInnerWrapper = styled.div`
-    zoom:130%;
-    padding-top:20%;
+    
+    justify-content: center;
+
+    height: 66vh;
     color:white;
     display: flex;
   flex-direction: column;

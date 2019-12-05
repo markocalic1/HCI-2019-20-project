@@ -38,12 +38,20 @@ module.exports = {
         // Add any options here
       },
     },
+    "gatsby-plugin-theme-ui",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `slideshow`,
+        path: `${__dirname}/src/images/slideshow`,
       },
     },
     `gatsby-plugin-emotion`,

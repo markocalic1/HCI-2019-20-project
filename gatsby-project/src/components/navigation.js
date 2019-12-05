@@ -18,7 +18,6 @@ import {
   import mainLogo from"../images/logo.png";
   import { Button } from 'reactstrap';
   import navbarStyles from "./navbar.module.css"
-  import { location } from '@reach/router';
 
 // const menuItems = [
 //   {

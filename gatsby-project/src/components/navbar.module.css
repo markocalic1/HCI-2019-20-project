@@ -24,7 +24,7 @@ a.active{
   }
 
 .overlay {
-    position: absolute;
+    position: relative;
     background-color: #2125294a;
     height:89%;
     width: 100%;
