@@ -3,7 +3,60 @@
     color:white;
     border-radius: 40px;
 }
+.signin:hover{
+    background-color:#17a2b8;
+    color:white;
+    border-radius: 40px;
+    zoom:1.05;
+}
 
-.nav-item:active{
-    border-bottom: 2px #ffffff;
+.nav_link:active{
+    border-bottom: 2px solid #D0D0D0;
+}
+
+a.active{
+    border-bottom: 2px solid #D0D0D0;
+
+}
+.navlink:global(.active) {
+    border-bottom: 2px solid #D0D0D0;
+
+  }
+
+.overlay {
+    position: relative;
+    background-color: #2125294a;
+    height:89%;
+    width: 100%;
+    left: 0;
+    
+}
+.thimLineEffect {
+    position: relative;
+    overflow: hidden;
+    height: 90px;
+    margin-top: -85px;
+    z-index: 9;
+}
+
+.imageCut{
+    width: 55%;
+    height: 90px;
+    position: absolute;
+    left: -10px; 
+    bottom: 0;
+    background: #FFF;
+    transition: all .6s;
+    -webkit-transform: rotate(5deg) translate(5px,45px);
+    -moz-transform: rotate(5deg) translate(5px,45px);
+    -ms-transform: rotate(5deg) translate(5px,45px);
+    -o-transform: rotate(5deg) translate(5px,45px);
+}
+.thim-line-effect .imageCut:last-child {
+    left: auto;
+    right: -10px;
+    -webkit-transform: rotate(-5deg) translate(-5px,45px);
+    -moz-transform: rotate(-5deg) translate(-5px,45px);
+    -ms-transform: rotate(-5deg) translate(-5px,45px);
+    -o-transform: rotate(-5deg) translate(-5px,45px);
 }

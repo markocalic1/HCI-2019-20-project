@@ -1,9 +1,32 @@
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 import React from "react"
-import Layout from "../components/layout"
 
-export default () => (
-  <Layout>
-    <h1 class="mb-5 d-flex justify-content-center  font-weight-bold">eAgrar</h1>
-    <h3 class="mb-5 d-flex justify-content-center ">Nova dimenzija poljoprivrede</h3>
-  </Layout>
-)
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import StyledBackgroundSection from "../components/background"
+import AboutSection from "../components/about"
+import FooterContainer from "../components/footer"
+
+const IndexPage = ({ data }) => {
+
+ 
+    return (
+    <div sx={{display:"flex",
+            flexDirection:"column"
+              
+        }} >
+        <Layout>
+         <SEO title="Naslovna" />
+        </Layout>
+        <StyledBackgroundSection></StyledBackgroundSection>
+        <AboutSection></AboutSection>
+        <FooterContainer></FooterContainer>
+       
+    </div>
+  )
+}
+
+export default IndexPage
+
+
