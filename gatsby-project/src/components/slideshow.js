@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
-import React, { useState } from 'react';
+import  { useState } from 'react';
 
 const  SlideShow = () => {
   const [index, setIndex] = useState(0)

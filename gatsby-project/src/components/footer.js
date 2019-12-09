@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import React, { useState } from 'react';
+
+import React from 'react';
   
   const FooterContainer = ({  }) => {
     

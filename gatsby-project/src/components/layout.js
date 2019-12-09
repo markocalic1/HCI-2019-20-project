@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Global } from "@emotion/core"
 
 import Navigation from "../components/navigation"
 

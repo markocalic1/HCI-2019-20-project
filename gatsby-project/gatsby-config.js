@@ -20,18 +20,33 @@ module.exports = {
         path: "/projekti",
       },
       {
-        text: "Rezultati",
-        path: "/rezultati",
+        text: "Sales",
+        path: "/sales",
       },
       {
-        text: "Ocjenjivanje",
-        path: "/ocjenjivanje",
+        text: "Contact",
+        path: "/contact",
       },
+     
      
     ],
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        /*
+         * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
+         * Example : 'dev-gatbsyjswp.pantheonsite.io' or 'www.example-site.com'
+         */
+        baseUrl: `blog.eagrar.eu/`,
+        protocol: `http`,
+        hostingWPCOM: false,
+        useACF: false,
+        
+      },
+    },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -40,6 +55,38 @@ module.exports = {
     },
     "gatsby-plugin-theme-ui",
     `gatsby-plugin-react-helmet`,
+
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [".mdx", ".md", ".markdown"],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 600,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+        plugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 600,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

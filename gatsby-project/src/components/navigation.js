@@ -6,11 +6,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  NavLink
 
   } from 'reactstrap';
 
@@ -53,9 +49,7 @@ const isCurrent =(path,href) => {
   return (path===href) ? true : false
 }
 
-const isActive = (path,href) => {
-  return isCurrent(path,href) ? {className: "active"}  : false
-}
+
 
 const NavLinks = ({ menuItems }) => (
   <>
@@ -84,7 +78,7 @@ const Navigation = ({ menuItems }) => {
           <Nav className="mx-auto text-white" navbar>
              <NavLinks menuItems={menuItems} />
           </Nav>
-          <Button href="/login" className={navbarStyles.signin }>SIGN IN</Button>{' '}
+          <Button href="/login" className={navbarStyles.signin }>SIGN IN</Button>
 
           </Collapse>
         </Navbar>
