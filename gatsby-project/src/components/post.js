@@ -15,8 +15,10 @@ class Post extends Component {
                 <SEO title="Blog" />
                     Blog page 
             </Layout>
-        <h1 dangerouslySetInnerHTML={{__html: post.title}}/>
-        <div dangerouslySetInnerHTML={{__html:post.content}}/>
+          <div className="container mt-4">
+            <h1 dangerouslySetInnerHTML={{__html: post.title}}/>
+            <div dangerouslySetInnerHTML={{__html:post.content}}/>
+          </div>
       </div>
     )
   }
