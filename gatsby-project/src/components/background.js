@@ -24,17 +24,16 @@ const BackgroundSection = ({ className }) => (
       // Set ImageData.
       const imageData = data.desktop.childImageSharp.fluid
       return (
-        <div className={navbarStyles.overlay} sx={{height:"88vh"}}>
+        <div className={navbarStyles.overlay} sx={{height:"50vh"}}>
             <BackgroundImage
                 Tag="section"
                 className={className}
                 fluid={imageData}
                 backgroundColor={`#040e18`}
                 >
-                <StyledInnerWrapper sx={{fontSize:[2,3,4]}}>
+                <StyledInnerWrapper sx={{fontSize:[1,2,3]}}>
                     <h2>eAgrar</h2>
                     <p>New way of agriculture</p>
-                    <p>Make the best of your efforts</p>
 
                 </StyledInnerWrapper>
                 <div className={navbarStyles.thimLineEffect}>
@@ -52,7 +51,7 @@ const StyledInnerWrapper = styled.div`
     
     justify-content: center;
 
-    height: 66vh;
+    height: 40vh;
     color:white;
     display: flex;
   flex-direction: column;

@@ -7,6 +7,7 @@ import { Link, graphql } from "gatsby"
 import StyledBackgroundSection from "../components/background"
 import Img from 'gatsby-image'
 import navbarStyles from "../components/navbar.module.css"
+import CategoryFilter from "../components/products/category-filter"
 
 import {
   Card, CardImg, CardText, CardBody, CardFooter,
@@ -83,6 +84,10 @@ class BlogPage extends Component {
             excerpt
             slug
             date(formatString: "MMMM D, YYYY")
+            categories {
+              name
+              id
+            }
           }
         }
       }

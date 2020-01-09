@@ -14,6 +14,7 @@ import {
   import mainLogo from"../images/logo.png";
   import { Button } from 'reactstrap';
   import navbarStyles from "./navbar.module.css"
+  import { globalHistory as history } from '@reach/router'
 
 // const menuItems = [
 //   {
@@ -45,20 +46,32 @@ import {
 //     path: "/questions",
 //   },
 const isCurrent =(path,href) => {
+if (href==="/"){
 
+}
+else{
+  href+="/"
+}
   return (path===href) ? true : false
 }
 
 
+const SomeComponent = () => {
+  const { location } = history
+  return location.pathname
+  
+}
+const path = SomeComponent()
 
 const NavLinks = ({ menuItems }) => (
   <>
+    
     {menuItems.map(menuItem => (
       
       <NavItem >
-        <NavLink className={navbarStyles.navlink} active={isCurrent(window.location.pathname,menuItem.path)}  key={menuItem.path} href={menuItem.path}>{menuItem.text}</NavLink>
-        {console.log(window.location.pathname)}
-       
+        <NavLink className={navbarStyles.navlink} active={isCurrent(path, menuItem.path)}  key={menuItem.path} href={menuItem.path}>{menuItem.text}</NavLink>
+        
+
       </NavItem>
     ))}
   </>

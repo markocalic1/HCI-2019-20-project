@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 class Post extends Component {
   render() {
     const post = this.props.data.wordpressPost
-
+    const { previous, next } = this.props.pageContext
     return (
         <div>
             <Layout>
@@ -19,7 +19,9 @@ class Post extends Component {
             <h1 dangerouslySetInnerHTML={{__html: post.title}}/>
             <div dangerouslySetInnerHTML={{__html:post.content}}/>
           </div>
-      </div>
+        
+        </div>
+
     )
   }
 }
@@ -41,6 +43,20 @@ export const postQuery = graphql`
       siteMetadata {
         title
         
+      }
+    }
+    allWordpressPost {
+      edges {
+        node {
+          title
+          excerpt
+          slug
+          date(formatString: "MMMM D, YYYY")
+          categories {
+            name
+            id
+          }
+        }
       }
     }
   }

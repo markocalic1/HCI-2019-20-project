@@ -17,7 +17,7 @@ module.exports = {
       },
       {
         text: "Stations",
-        path: "/projekti",
+        path: "/stations",
       },
       {
         text: "Sales",
