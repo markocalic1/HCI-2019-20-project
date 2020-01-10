@@ -10,7 +10,7 @@
     zoom:1.05;
 }
 
-.nav_link:active{
+.nav_link{
     border-bottom: 2px solid #D0D0D0;
 }
 

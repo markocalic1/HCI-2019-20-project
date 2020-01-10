@@ -14,62 +14,40 @@ import {
   import mainLogo from"../images/logo.png";
   import { Button } from 'reactstrap';
   import navbarStyles from "./navbar.module.css"
-  import { globalHistory as history } from '@reach/router'
+  import { globalHist as history } from '@reach/router'
+import Link from 'react-router'
+import PropTypes from 'prop-types'
 
-// const menuItems = [
-//   {
-//     text: "Naslovna",
-//     path: "/",
-//   },
-//   {
-//     text: "Predavanja",
-//     path: "/predavanja",
-//   },
-//   {
-//     text: "Projekti",
-//     path: "/projekti",
-//   },
-//   {
-//     text: "Rezultati",
-//     path: "/rezultati",
-//   },
-//   {
-//     text: "Ocjenjivanje",
-//     path: "/ocjenjivanje",
-//   },
-//   {
-//     text: "Blog",
-//     path: "/blog",
-//   },
-//   {
-//     text: "Q&A",
-//     path: "/questions",
-//   },
-const isCurrent =(path,href) => {
-if (href==="/"){
+// const isCurrent =(path,href) => {
+// if (href==="/"){
 
-}
-else{
-  href+="/"
-}
-  return (path===href) ? true : false
+// }
+// else{
+//   href+="/"
+// }
+//   return (path===href) ? true : false
+// }
+
+const isPartiallyActive = ({
+  isPartiallyCurrent
+}) => {
+  return isPartiallyCurrent
+    ? true
+    : false
 }
 
-
-const SomeComponent = () => {
-  const { location } = history
-  return location.pathname
-  
+const isActive = ({ isCurrent }) => {
+  return isCurrent ?  { className: 'navlink-active navlink' }
+  : { className: 'navlink' }
 }
-const path = SomeComponent()
 
-const NavLinks = ({ menuItems }) => (
+const NavLinks = ({ menuItems,props }) => (
   <>
     
     {menuItems.map(menuItem => (
       
       <NavItem >
-        <NavLink className={navbarStyles.navlink} active={isCurrent(path, menuItem.path)}  key={menuItem.path} href={menuItem.path}>{menuItem.text}</NavLink>
+        <NavLink tag={Link} activeClassName="active" href={menuItem.path}>{menuItem.text}</NavLink>
         
 
       </NavItem>
@@ -101,6 +79,10 @@ const Navigation = ({ menuItems }) => {
       
       
   )
+}
+
+Navigation.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Navigation
