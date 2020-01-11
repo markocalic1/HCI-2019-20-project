@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import FooterContainer from "../components/footer"
 import ContactForm from "../components/contactform"
 
+
 const ContactPage = () => <div>
     <Layout>
     <SEO title="Contact" />

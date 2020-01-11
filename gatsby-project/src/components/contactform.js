@@ -3,6 +3,7 @@ import { jsx } from "theme-ui"
 
 import React from 'react'
 import { Button } from "reactstrap"
+import ShareButtons from "./socialmedia"
 
   
   const ContactForm = ({  }) => {
@@ -55,6 +56,8 @@ import { Button } from "reactstrap"
 <hr></hr>
 
 <h4>Or you can find us on social networks...</h4>
+
+<ShareButtons></ShareButtons>
       </div>  
     )
   }
