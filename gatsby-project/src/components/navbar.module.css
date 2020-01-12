@@ -7,10 +7,10 @@
     background-color:#17a2b8;
     color:white;
     border-radius: 40px;
-    zoom:1.05;
+    zoom:1.01;
 }
 
-.nav_link{
+.nav_link:active{
     border-bottom: 2px solid #D0D0D0;
 }
 

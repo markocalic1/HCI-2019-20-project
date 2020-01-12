@@ -2,9 +2,8 @@
 import { jsx } from "theme-ui"
 
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from "gatsby-image"
 import {
-  Card, CardText, CardBody, CardSubtitle, Button,CardTitle
+  Card,  CardBody, CardSubtitle, Button,CardTitle
 } from 'reactstrap';
 
 const StationList = () => {

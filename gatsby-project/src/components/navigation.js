@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import {
   Collapse,
   Navbar,
@@ -14,9 +15,6 @@ import {
   import mainLogo from"../images/logo.png";
   import { Button } from 'reactstrap';
   import navbarStyles from "./navbar.module.css"
-  import { globalHist as history } from '@reach/router'
-import Link from 'react-router'
-import PropTypes from 'prop-types'
 
 // const isCurrent =(path,href) => {
 // if (href==="/"){
@@ -41,13 +39,13 @@ const isActive = ({ isCurrent }) => {
   : { className: 'navlink' }
 }
 
-const NavLinks = ({ menuItems,props }) => (
+const NavLinks = ({ menuItems }) => (
   <>
     
     {menuItems.map(menuItem => (
       
       <NavItem >
-        <NavLink tag={Link} activeClassName="active" href={menuItem.path}>{menuItem.text}</NavLink>
+        <NavLink href={menuItem.path} activestyle={navbarStyles} >{menuItem.text}</NavLink>
         
 
       </NavItem>
@@ -81,8 +79,6 @@ const Navigation = ({ menuItems }) => {
   )
 }
 
-Navigation.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+
 
 export default Navigation

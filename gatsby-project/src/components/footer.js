@@ -1,7 +1,6 @@
-
 import React from 'react';
   
-  const FooterContainer = ({  }) => {
+  const FooterContainer = ({ props }) => {
     
    
     return (

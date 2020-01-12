@@ -37,6 +37,7 @@
     "react-router-dom": "^5.1.2",
     "react-typography": "^0.16.19",
     "reactstrap": "^8.1.1",
+    "slash": "^3.0.0",
     "styled-components": "^4.4.1",
     "theme-ui": "^0.2.49",
     "typography": "^0.16.19",

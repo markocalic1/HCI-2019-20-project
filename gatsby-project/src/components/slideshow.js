@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
-import React, { useState ,StaticQuery} from 'react';
+import  { useState } from 'react';
 import {
   Carousel,
   CarouselItem,

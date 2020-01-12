@@ -9,6 +9,8 @@ import Img from 'gatsby-image'
 import navbarStyles from "../components/navbar.module.css"
 import Post from "../components/post"
 import {Row ,Col} from 'reactstrap'
+import Sidebar from '../components/sidebar'
+import FooterContainer from "../components/footer"
 
 const blogQuery = graphql`
 {
@@ -29,6 +31,10 @@ const blogQuery = graphql`
             }
           }
           tags
+
+        }
+        fields{
+          slug
         }
         excerpt
       }
@@ -56,10 +62,11 @@ const BlogPage = () => (
                           <div  >
                             {data.allMdx.posts.map(({post}) =>(
                               <Post  
+                              key={post.id}
                               title={post.frontmatter.title }
                               author={post.frontmatter.author}
                               date={post.frontmatter.date}
-                              path={post.frontmatter.path}
+                              slug={post.fields.slug}
                               body={post.excerpt}
                               fluid={post.frontmatter.image.childImageSharp.fluid}
                               tags={post.frontmatter.tags}
@@ -72,17 +79,13 @@ const BlogPage = () => (
                   </div>
                 </Col>
                 <Col md="4">
-                    <div sx={{
-                      width:"100%" , 
-                      height:"100%" ,
-                      backgroundColor:"#e5e5e5b5",
-                      margin:""}} >
-
-                    </div>
+                    
+                    <Sidebar/>
                 </Col>
               </Row>
 
-            
+              <FooterContainer></FooterContainer>
+
 
           </div>
           

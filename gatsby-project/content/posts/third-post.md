@@ -1,5 +1,5 @@
 ---
-itle: "STUDENTI FESB-A POBJEDNICI MEĐUNARODNOG STARTUP NATJECANJA STUP!"
+title: "Radovi u vinogradu u svibnju"
 date: May 28, 2019
 author: "Marko Calic"
 path: "/second-post"
