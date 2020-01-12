@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import React from 'react'
+import { jsx } from "theme-ui"
 import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import navbarStyles from "./navbar.module.css"

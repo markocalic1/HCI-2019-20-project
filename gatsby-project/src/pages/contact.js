@@ -4,9 +4,8 @@ import { jsx} from "theme-ui"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import StationList from "../components/stationlist"
 
-const StationPage = ({ data }) => {
+const ContactPage = ({ data }) => {
 
  
     return (
@@ -15,8 +14,7 @@ const StationPage = ({ data }) => {
               
         }} >
         <Layout>
-         <SEO title="Stations" />
-         <StationList></StationList>
+         <SEO title="Contact" />
 
         </Layout>
        
@@ -26,4 +24,4 @@ const StationPage = ({ data }) => {
 
 
 
-export default StationPage
+export default ContactPage

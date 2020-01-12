@@ -12,7 +12,6 @@ import {
 } from 'reactstrap';
 
 function SlideShow() {
-  const [index, setIndex] = useState(0)
   const { allFile } = useStaticQuery(
     graphql`
   {

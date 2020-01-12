@@ -1,16 +1,12 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import React ,{ Component } from "react"
+import { jsx } from "theme-ui"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Link, graphql, StaticQuery } from "gatsby"
-import StyledBackgroundSection from "../components/background"
-import Img from 'gatsby-image'
-import navbarStyles from "../components/navbar.module.css"
+import {  graphql, StaticQuery } from "gatsby"
 import Post from "../components/post"
 import {Row ,Col} from 'reactstrap'
 import Sidebar from '../components/sidebar'
-import FooterContainer from "../components/footer"
+import React from "react"
 
 const blogQuery = graphql`
 {
@@ -49,8 +45,7 @@ const BlogPage = () => (
             
             <Layout>
               <SEO title="Blog" />
-                    Blog page 
-            </Layout>
+                    
               <Row sx={{margin:"auto" ,padding:"5vh"}}>
                 <Col md="8">
                   <div sx={{ }}>
@@ -84,7 +79,7 @@ const BlogPage = () => (
                 </Col>
               </Row>
 
-              <FooterContainer></FooterContainer>
+              </Layout>
 
 
           </div>

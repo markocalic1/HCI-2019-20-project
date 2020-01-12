@@ -4,7 +4,7 @@ import {Card , CardTitle, CardBody ,Form, FormGroup , Input, Button} from 'react
 import { StaticQuery , Link } from "gatsby"
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
-import React from 'react'
+import React from "react"
 
 const Sidebar = () => (
     <>

@@ -1,17 +1,7 @@
 import React from "react"
-import { graphql ,useStaticQuery } from "gatsby"
-import Img from "gatsby"
 import Slideshow from "../components/slideshow"
 const AboutSection = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+
 
   return (
     

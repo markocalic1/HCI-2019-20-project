@@ -16,28 +16,6 @@ import {
   import { Button } from 'reactstrap';
   import navbarStyles from "./navbar.module.css"
 
-// const isCurrent =(path,href) => {
-// if (href==="/"){
-
-// }
-// else{
-//   href+="/"
-// }
-//   return (path===href) ? true : false
-// }
-
-const isPartiallyActive = ({
-  isPartiallyCurrent
-}) => {
-  return isPartiallyCurrent
-    ? true
-    : false
-}
-
-const isActive = ({ isCurrent }) => {
-  return isCurrent ?  { className: 'navlink-active navlink' }
-  : { className: 'navlink' }
-}
 
 const NavLinks = ({ menuItems }) => (
   <>
