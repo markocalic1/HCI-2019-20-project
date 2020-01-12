@@ -30,7 +30,7 @@ module.exports = {
      
      
     ],
-    author: `@gatsbyjs`,
+    author: `MC`,
   },
   plugins: [
     // {
