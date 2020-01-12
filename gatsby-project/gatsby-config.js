@@ -55,12 +55,7 @@ module.exports = {
     },
     "gatsby-plugin-theme-ui",
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-catch-links`,
-      options: {
-        excludePattern: /(excluded-link|external)/,
-      },
-    },
+    
 
     {
       resolve: `gatsby-plugin-mdx`,
