@@ -55,7 +55,8 @@ module.exports = {
     },
     "gatsby-plugin-theme-ui",
     `gatsby-plugin-react-helmet`,
-    
+    `gatsby-remark-smartypants`,
+
 
     {
       resolve: `gatsby-plugin-mdx`,
@@ -69,6 +70,8 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
+          `gatsby-remark-smartypants`,
+
         ],
         plugins: [
           {

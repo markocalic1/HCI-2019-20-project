@@ -9,5 +9,6 @@ tags:
     - novosti
 ---
 
-#Od 20. do 22.svibnja u organizaciji Studentskog poduzetničkog inkubatora Ekonomskog fakulteta u Splitu održano je prvo međunarodno studentsko startup natjecanje STup! 2019. STup! je na jednom mjestu okupio studente, poduzetnike i stručnjake s ciljem promoviranja startup scene i poduzetništva, uz natjecateljski dio kojim su se mladi startupi predstavili potencijalnim investitorima. U  natjecateljskom dijelu se predstavilo …
+## Od 20. do 22.svibnja u organizaciji Studentskog poduzetničkog inkubatora Ekonomskog fakulteta u Splitu
+ održano je prvo međunarodno studentsko startup natjecanje STup! 2019. STup! je na jednom mjestu okupio studente, poduzetnike i stručnjake s ciljem promoviranja startup scene i poduzetništva, uz natjecateljski dio kojim su se mladi startupi predstavili potencijalnim investitorima. U  natjecateljskom dijelu se predstavilo …
 

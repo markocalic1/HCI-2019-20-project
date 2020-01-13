@@ -33,6 +33,7 @@ const blogQuery = graphql`
           slug
         }
         excerpt
+        body
       }
     }
   }
