@@ -1,7 +1,6 @@
 const {slugify} = require('./src/utils/utilityFunctions');
 const path = require(`path`)
-const slash = require(`slash`)
-
+const _ = require('lodash')
 
 exports.onCreateNode = ({ node , actions}) => {
   const { createNodeField } = actions
@@ -18,8 +17,12 @@ exports.onCreateNode = ({ node , actions}) => {
 exports.createPages = async ({actions , graphql}) => {
 
   const {createPage} = actions;
-  const singlePostTemplate = path.resolve(`./src/components/single-post.js`)
+  const templates  = {
+    singlePost:path.resolve(`./src/templates/single-post.js`),
+    tagsPage:path.resolve(`./src/templates/tags-page.js`)
 
+
+  }
   return graphql(`
     {
     allMdx(filter: {fileAbsolutePath: {regex: "//content/posts//"}}) {
@@ -46,11 +49,35 @@ exports.createPages = async ({actions , graphql}) => {
     posts.forEach(({post}) => {
       createPage({
         path: `/${post.fields.slug}/`,
-        component: singlePostTemplate,
+        component: templates.singlePost,
         context: {
           slug: post.fields.slug,
         }
       })
+    })
+//Prikupi sve tagove
+    let tags =[]
+
+    _.each(posts ,edge => {
+        if(_.get(edge , 'node.frontmatter.tags')){
+          tags= tags.concat(posts.post.frontmatter.tags)
+        }
+    })
+
+    let tagPostCounts ={}
+    tags.forEach(tag => {
+      tagsPostCounts[tag] = (tagsPostCounts[tag] || 0) + 1;
+    })
+
+    tags = _.uniq(tags) //rjesavanje duplih tags
+//kreiranje tag stranice
+    createPage({
+      path: `/tags`,
+      component: templates.tagsPage,
+      context:{
+        tags,
+        tagPostCounts
+      }
     })
   })
 }
