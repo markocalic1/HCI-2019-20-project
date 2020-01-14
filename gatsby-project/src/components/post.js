@@ -10,7 +10,7 @@ import {slugify} from '../utils/utilityFunctions'
 
 const Post = ({ title ,author, date , slug , body, fluid , tags  }) => {
     return (
-    <Card sx={{marginBottom:"3vh"}}>
+    <Card sx={{marginBottom:"3vh" }}>
       <Link to={slug}>
       <Img sx={{
         maxHeight:"40vh"

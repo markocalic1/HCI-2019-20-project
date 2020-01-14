@@ -5,16 +5,19 @@ import { StaticQuery , Link } from "gatsby"
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import React from "react"
+import {slugify} from '../utils/utilityFunctions'
+
 
 const Sidebar = () => (
+    
     <>
     <div>
         <Card className="mb-2">
             <CardBody>
-                <CardTitle className="text-canter text-uppercase mb-3">
+                <CardTitle d className="text-center text-uppercase mb-3">
                     Newsletter
                 </CardTitle>
-
+                <tagsPage></tagsPage>
                 <Form className="text-center">
                     <FormGroup>
                         <Input type="email" name="email"  placeholder="Your email adress.."/>
@@ -24,6 +27,27 @@ const Sidebar = () => (
                     </Button>
 
                 </Form>
+            </CardBody>
+        </Card>
+
+        <Card className="mb-2">
+            <CardBody>
+                <CardTitle className="text-canter text-uppercase ">
+                    Tags
+                </CardTitle>
+                <StaticQuery query={SidebarQuery} render={(data) => (
+                    <div style={{display:"inline-grid"}}>
+                        {data.allMdx.tagsRow.map(tag =>(
+                        <Link style={{textDecoration:"none" , marginX:"10px"}} to={`/tag/${slugify(tag)}`} key={tag}>
+                            {tag}
+                        </Link>
+                        ))
+
+                        }
+                    </div>
+                )}
+                
+                />
             </CardBody>
         </Card>
 
@@ -48,7 +72,7 @@ const Sidebar = () => (
                                 <Link to={post.fields.slug}>
                                     <Img className="card-image-top" fluid={post.frontmatter.image.childImageSharp.fluid}/>
                                 </Link>
-                                <CardBody>
+                                <CardBody style={{padding:"1px"}}>
                                     <CardTitle sx={{padding:"0.30rem"}}>
                                         <Link style={{textDecoration:"none",
                                                      fontWeight:"bold"  , 
@@ -95,6 +119,7 @@ const SidebarQuery = graphql`
         }
         }
       }
+      tagsRow:distinct(field: frontmatter___tags)
     }
   }
 `

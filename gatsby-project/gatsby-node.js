@@ -18,16 +18,17 @@ exports.createPages = async ({actions , graphql}) => {
 
   const {createPage} = actions;
   const templates  = {
-    singlePost:path.resolve(`./src/templates/single-post.js`),
-    tagsPage:path.resolve(`./src/templates/tags-page.js`)
+    singlePost: path.resolve(`./src/templates/single-post.js`),
+    tagsPage: path.resolve(`./src/templates/tags-page.js`),
+    tagPosts :  path.resolve(`./src/templates/tag-posts.js`)
 
 
   }
   return graphql(`
     {
     allMdx(filter: {fileAbsolutePath: {regex: "//content/posts//"}}) {
-       posts: edges {
-         post: node {
+       edges {
+          node {
           id
           frontmatter {
             author            
@@ -44,14 +45,14 @@ exports.createPages = async ({actions , graphql}) => {
   `).then( res => {
     if(res.errors) return     console.error(result.errors)
 
-    const posts = res.data.allMdx.posts
+    const posts = res.data.allMdx.edges
 
-    posts.forEach(({post}) => {
+    posts.forEach(({node}) => {
       createPage({
-        path: `/${post.fields.slug}/`,
+        path: `/${node.fields.slug}/`,
         component: templates.singlePost,
         context: {
-          slug: post.fields.slug,
+          slug: node.fields.slug,
         }
       })
     })
@@ -60,16 +61,17 @@ exports.createPages = async ({actions , graphql}) => {
 
     _.each(posts ,edge => {
         if(_.get(edge , 'node.frontmatter.tags')){
-          tags= tags.concat(posts.post.frontmatter.tags)
+          tags= tags.concat(edge.node.frontmatter.tags)
         }
     })
 
     let tagPostCounts ={}
     tags.forEach(tag => {
-      tagsPostCounts[tag] = (tagsPostCounts[tag] || 0) + 1;
+      tagPostCounts[tag] = (tagPostCounts[tag] || 0) + 1;
     })
 
     tags = _.uniq(tags) //rjesavanje duplih tags
+    console.log(tags)
 //kreiranje tag stranice
     createPage({
       path: `/tags`,
@@ -77,7 +79,18 @@ exports.createPages = async ({actions , graphql}) => {
       context:{
         tags,
         tagPostCounts
-      }
+      },
+    })
+
+    tags.forEach(tag => {
+      createPage({
+        path: `/tag/${slugify(tag)}`,
+        component: templates.tagPosts,
+        context: {
+          tag,
+
+        }
+      })
     })
   })
 }
