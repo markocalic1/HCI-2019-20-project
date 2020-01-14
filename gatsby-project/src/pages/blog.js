@@ -10,7 +10,7 @@ import React from "react"
 
 const blogQuery = graphql`
 {
-  allMdx(filter: {fileAbsolutePath: {regex: "//content/posts//"}, frontmatter: {title: {ne: "true"}}}) {
+  allMdx(filter: {fileAbsolutePath: {regex: "//content/posts//"}, frontmatter: {title: {ne: "true"}}},limit:3) {
     posts: edges {
       post: node {
         id
