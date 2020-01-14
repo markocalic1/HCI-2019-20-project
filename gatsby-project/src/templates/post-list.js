@@ -5,10 +5,11 @@ import SEO from '../components/seo'
 import Sidebar from '../components/sidebar'
 import { Row , Col } from 'reactstrap'
 import { graphql } from 'gatsby'
+import PaginationLinks from '../components/paginationLinks'
 
 const postList = props => {
     const posts = props.data.allMdx.edges
-    const { currentPage } = props.pageContext
+    const { currentPage , numberOfPages } = props.pageContext
     console.log(posts)
     return (
         <Layout>
@@ -29,8 +30,8 @@ const postList = props => {
                             tags={node.frontmatter.tags}
                         />
                     ))}
+                    <PaginationLinks currentPage={currentPage} numberOfPages={numberOfPages}></PaginationLinks>
                    </div>
-                     
                 </Col>
                 <Col md="4">
                     

@@ -4,14 +4,18 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import {  graphql, StaticQuery } from "gatsby"
 import Post from "../components/post"
-import {Row ,Col} from 'reactstrap'
+import {Row ,Col, Pagination} from 'reactstrap'
 import Sidebar from '../components/sidebar'
 import React from "react"
+import PaginationLinks from '../components/paginationLinks'
+
+
 
 const blogQuery = graphql`
 {
   allMdx(filter: {fileAbsolutePath: {regex: "//content/posts//"}, frontmatter: {title: {ne: "true"}}},limit:3) {
-    posts: edges {
+    totalCount  
+  posts: edges {
       post: node {
         id
         frontmatter {
@@ -39,7 +43,11 @@ const blogQuery = graphql`
   }
 }
 `
-const BlogPage = () => (
+const BlogPage = () => {
+  const postsPerPage =3;
+  let numberOfPages 
+
+  return(
 
         <>
           <div>
@@ -54,6 +62,8 @@ const BlogPage = () => (
                     <StaticQuery
                       query ={blogQuery}
                       render={data =>{
+                        numberOfPages = Math.ceil(data.allMdx.totalCount / postsPerPage)
+                        console.log(numberOfPages)
                         return (
                           <div  >
                             {data.allMdx.posts.map(({post}) =>(
@@ -68,11 +78,14 @@ const BlogPage = () => (
                               tags={post.frontmatter.tags}
                               />
                             ))}
+                            <PaginationLinks currentPage={1} numberOfPages={numberOfPages}></PaginationLinks>
+
                           </div>
+
                         )
                       }}
                     />
-                  </div>
+                    </div>
                 </Col>
                 <Col md="4">
                     
@@ -87,7 +100,8 @@ const BlogPage = () => (
           
          
         </>
-      )
+  )
+}
    
   
   export default BlogPage
