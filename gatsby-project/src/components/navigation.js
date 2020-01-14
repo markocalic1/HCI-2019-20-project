@@ -18,6 +18,8 @@ import {
 import Link from 'react-router'
 import PropTypes from 'prop-types'
 
+import Logout from "../components/logout"
+
 // const isCurrent =(path,href) => {
 // if (href==="/"){
 
@@ -69,8 +71,8 @@ const Navigation = ({ menuItems }) => {
           <Nav className="mx-auto text-white" navbar>
              <NavLinks menuItems={menuItems} />
           </Nav>
-          <Button href="/login" className={navbarStyles.signin }>SIGN IN</Button>
-
+          <Button href="/login" className={navbarStyles.signin }>LOG IN</Button>
+          <Logout></Logout>
           </Collapse>
         </Navbar>
       </div>
