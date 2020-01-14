@@ -35,16 +35,16 @@ const Sidebar = () => (
                 <CardTitle className="text-canter text-uppercase ">
                     Tags
                 </CardTitle>
-                <StaticQuery query={SidebarQuery} render={(data) => (
-                    <div style={{display:"inline-grid"}}>
+                
+                    {/* <div style={{display:"inline-grid"}}>
                         {data.allMdx.tagsRow.map(tag =>(
                         <Link style={{textDecoration:"none" , marginX:"10px"}} to={`/tag/${slugify(tag)}`} key={tag}>
                             {tag}
                         </Link>
-                        ))
+                        ))}
 
-                        }
-                    </div>
+                        
+                    </div> */}
                 )}
                 
                 />
