@@ -37,7 +37,7 @@ const Navigation = ({ menuItems }) => {
 
     const toggle = () => setIsOpen(!isOpen);
   return (
-    <div>
+    <div style={{position:"fixed" , top:"0px" , width:"100%" ,zIndex:"10000"}}>
         <Navbar color="light" className="navbar-dark bg-dark" light expand="md">
         <NavbarBrand href="/" className=""><img  src={mainLogo} height="50" className="m-auto" alt="fireSpot"/>eAgrar</NavbarBrand>
         <NavbarToggler onClick={toggle} />

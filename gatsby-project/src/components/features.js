@@ -12,8 +12,8 @@ const FeaturesSection = ({ children }) => {
 
   return (
     <div >
-        <Row style={{display:"flex" , justifyContent:"center "  , paddingBottom:"3vh"}}>
-            <Card  className="icon-space"  md="4">
+        <Row style={{display:"inline-flex" , justifyContent:"center " ,width:"100%" , margin:"0" }}>
+            <Card lg="6" className="icon-space"  >
                     <CardTitle className="icon">
                         <FontAwesomeIcon icon={faPowerOff} size="4x" color="#17a2b8" />                    
                     </CardTitle>
@@ -28,7 +28,7 @@ const FeaturesSection = ({ children }) => {
                 </CardText>
             </Card>
 
-            <Card  className="icon-space"  md="4">
+            <Card lg="6" className="icon-space"  >
                     <CardTitle className="icon">
                         <FontAwesomeIcon icon={faRocket} size="4x" color="#17a2b8" />                    
                     </CardTitle>
@@ -43,7 +43,7 @@ const FeaturesSection = ({ children }) => {
                 </CardText>
             </Card>
 
-            <Card  className="icon-space"  md="4">
+            <Card sm="4" className="icon-space"  >
                     <CardTitle className="icon">
                         <FontAwesomeIcon icon={faBell} size="4x" color="#17a2b8" />                    
                     </CardTitle>
@@ -56,7 +56,7 @@ const FeaturesSection = ({ children }) => {
                 </CardText>
             </Card>
             
-            <Card  className="icon-space"  md="4">
+            <Card sm="4" className="icon-space"  >
                     <CardTitle className="icon">
                         <FontAwesomeIcon icon={faMobileAlt} size="4x" color="#17a2b8" />                    
                     </CardTitle>
@@ -69,7 +69,7 @@ const FeaturesSection = ({ children }) => {
                 </CardText>
             </Card>
 
-            <Card  className="icon-space"  md="4">
+            <Card  className="icon-space"  sm="4">
                     <CardTitle className="icon">
                         <FontAwesomeIcon icon={faCloudDownloadAlt} size="4x" color="#17a2b8" />                    
                     </CardTitle>

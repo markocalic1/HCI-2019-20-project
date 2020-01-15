@@ -24,8 +24,11 @@ const Layout = ({ children }) => {
     <>
       
       
-        <Navigation menuItems={data.site.siteMetadata.menuItems} />
-        {children}
+        <Navigation menuItems={data.site.siteMetadata.menuItems}/>
+        <div style={{marginTop:"75px"}}>
+          {children}
+        </div>
+        
         <FooterContainer></FooterContainer>
 
     </>

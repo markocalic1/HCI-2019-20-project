@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
 
  
     return (
-    <div >
+    <div style={{width:"100%"}}>
         <Layout>
          <SEO title="Naslovna" />
           <StyledBackgroundSection></StyledBackgroundSection>
