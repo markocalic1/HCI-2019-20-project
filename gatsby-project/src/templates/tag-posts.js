@@ -15,7 +15,7 @@ const TagPosts = ({data ,  pageContext}) => {
         <Layout>
             <SEO title="Tags" />
             
-            <Row style={{margin:"auto" ,padding:"5vh"}}>
+            <Row style={{margin:"auto" ,padding:"1vh"}}>
                 <Col md="8">
                     <h1>{pageHeader}</h1>
                     {data.allMdx.edges.map(({node}) => (

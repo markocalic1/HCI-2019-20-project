@@ -10,12 +10,11 @@ import PaginationLinks from '../components/paginationLinks'
 const postList = props => {
     const posts = props.data.allMdx.edges
     const { currentPage , numberOfPages } = props.pageContext
-    console.log(posts)
     return (
         <Layout>
               <SEO title="Blog" />
                     
-              <Row style={{margin:"auto" ,padding:"5vh"}}>
+              <Row style={{margin:"auo" ,padding:"1vh"}}>
                 <Col md="8">
                   <div sx={{ }}>                    
                     {posts.map(({node}) =>(
@@ -46,7 +45,7 @@ const postList = props => {
 
 }
 
-export const poostListQuery = graphql`
+export const postListQuery = graphql`
     query postListQuery($skip: Int! , $limit: Int!){
         allMdx(filter: {fileAbsolutePath: {regex: "//content/posts//"}},sort: {fields: frontmatter___date, order: DESC} 
              limit: $limit

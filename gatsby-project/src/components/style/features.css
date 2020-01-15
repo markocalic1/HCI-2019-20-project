@@ -1,0 +1,31 @@
+.icon-space{
+    width: 271px;
+    height: 275px;
+    padding:3vh;
+    margin:3vh;
+    align-items:center;
+    border: 2px dashed rgba(0,0,0,.125);
+}
+.icon-space:hover > .icon{
+    transition: all .6s ease-in-out;
+    transform: scale(1.2);
+    -webkit-transition: all .6s;
+    -webkit-transform: scale(1.2);
+    
+
+
+
+}
+.icon{
+    padding-bottom: 5px;
+}
+.icon-space:hover{
+    color:#17a2b8;
+    transition: all .6s ;
+
+}
+
+.card-subtitle{
+    font-weight:500; 
+    padding-bottom:3vh;
+}

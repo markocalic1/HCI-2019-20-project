@@ -1,20 +1,50 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import {Card , CardTitle, CardBody ,Form, FormGroup , Input, Button} from 'reactstrap'
-import { StaticQuery , Link } from "gatsby"
+import { Link ,graphql , useStaticQuery} from "gatsby"
 import Img from 'gatsby-image'
-import { graphql } from 'gatsby'
 import React from "react"
 import {slugify} from '../utils/utilityFunctions'
 
 
-const Sidebar = () => (
+const Sidebar = props => {
+   
+    const data = useStaticQuery(graphql`{
+        allMdx(filter: {fileAbsolutePath: {regex: "//content/posts//"}, frontmatter: {title: {ne: "true"}}}, sort: {fields: frontmatter___date, order: DESC}, limit: 3) {
+          posts: edges {
+            post: node {
+              id
+              frontmatter {
+                title
+                
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid_withWebp
     
+                    }
+                  }
+                }
+              }
+            fields{
+                slug
+            }
+            }
+          }
+          tagsRow:distinct(field: frontmatter___tags)
+        }
+      }
+    `)
+
+    const posts= data.allMdx.posts
+    const tagsRow = data.allMdx.tagsRow
+
+    return (
     <>
     <div>
         <Card className="mb-2">
             <CardBody>
-                <CardTitle d className="text-center text-uppercase mb-3">
+                <CardTitle  className="text-center text-uppercase mb-3">
                     Newsletter
                 </CardTitle>
                 <tagsPage></tagsPage>
@@ -36,18 +66,16 @@ const Sidebar = () => (
                     Tags
                 </CardTitle>
                 
-                    {/* <div style={{display:"inline-grid"}}>
-                        {data.allMdx.tagsRow.map(tag =>(
+                    <div style={{display:"inline-grid"}}>
+                        {tagsRow.map(tag =>(
                         <Link style={{textDecoration:"none" , marginX:"10px"}} to={`/tag/${slugify(tag)}`} key={tag}>
                             {tag}
                         </Link>
                         ))}
 
                         
-                    </div> */}
-                )}
+                    </div>
                 
-                />
             </CardBody>
         </Card>
 
@@ -65,9 +93,9 @@ const Sidebar = () => (
                 <CardTitle className="text-canter text-uppercase ">
                     Recent Post:
                 </CardTitle>
-                <StaticQuery query={SidebarQuery} render={(data) => (
+                
                     <div>
-                        {data.allMdx.posts.map(({post}) => (
+                        {posts.map(({post}) => (
                             <Card key={post.id} className="mb-1">
                                 <Link to={post.fields.slug}>
                                     <Img className="card-image-top" fluid={post.frontmatter.image.childImageSharp.fluid}/>
@@ -87,42 +115,42 @@ const Sidebar = () => (
                             </Card>
                         ))}
                     </div>
-                )}
                 
-                />
+                
+                
             </CardBody>
         </Card>
     </div>
     </>
-)
+    )
+}
 
-const SidebarQuery = graphql`
-  {
-    allMdx(filter: {fileAbsolutePath: {regex: "//content/posts//"}, frontmatter: {title: {ne: "true"}}}, sort: {fields: frontmatter___date, order: DESC}, limit: 3) {
-      posts: edges {
-        post: node {
-          id
-          frontmatter {
-            title
+// export const SidebarQuery = graphql`{
+//     allMdx(filter: {fileAbsolutePath: {regex: "//content/posts//"}, frontmatter: {title: {ne: "true"}}}, sort: {fields: frontmatter___date, order: DESC}, limit: 3) {
+//       posts: edges {
+//         post: node {
+//           id
+//           frontmatter {
+//             title
             
-            image {
-              childImageSharp {
-                fluid(maxWidth: 300) {
-                    ...GatsbyImageSharpFluid_withWebp
+//             image {
+//               childImageSharp {
+//                 fluid(maxWidth: 300) {
+//                     ...GatsbyImageSharpFluid_withWebp
 
-                }
-              }
-            }
-          }
-        fields{
-            slug
-        }
-        }
-      }
-      tagsRow:distinct(field: frontmatter___tags)
-    }
-  }
-`
+//                 }
+//               }
+//             }
+//           }
+//         fields{
+//             slug
+//         }
+//         }
+//       }
+//       tagsRow:distinct(field: frontmatter___tags)
+//     }
+//   }
+// `
 
 
 export default Sidebar

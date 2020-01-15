@@ -5,18 +5,18 @@ import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 const PaginationLinks = ({currentPage , numberOfPages }) => {
     const isFirst = currentPage === 1
     const isLast = currentPage === numberOfPages
-    const prevoiusPage = currentPage -1 === 1 ? '/' : '/blog/' + (currentPage-1).toString()
+    const previousPage = currentPage -1 === 1 ? '/blog' : '/blog/' + (currentPage-1).toString()
     const nextPage = '/blog/' + (currentPage+1).toString()
 
     return(
-        <Pagination>
+        <Pagination style={{marginLeft:"0px"}}>
             {isFirst ? (
                 <PaginationItem disabled>
                     <PaginationLink previous href="/"></PaginationLink>
                 </PaginationItem>
             ):(
                 <PaginationItem >
-                    <PaginationLink previous href={prevoiusPage}></PaginationLink>
+                    <PaginationLink previous href={previousPage}></PaginationLink>
                 </PaginationItem>
             )
         }

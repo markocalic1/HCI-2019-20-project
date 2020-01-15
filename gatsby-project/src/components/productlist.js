@@ -69,7 +69,7 @@ const ProductList = () => {
                 <CardText>{product.frontmatter.description}</CardText>
                 <hr></hr>
 
-                <Button color="success">Order</Button>
+                <Button style={{backgroundColor:"#17a2b8"}}>Order</Button>
               </CardBody>
             </Card>
           </div>

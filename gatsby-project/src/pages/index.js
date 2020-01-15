@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import StyledBackgroundSection from "../components/background"
 import AboutSection from "../components/about"
+import FeaturesSection from "../components/features"
+
 
 const IndexPage = ({ data }) => {
 
@@ -14,6 +16,7 @@ const IndexPage = ({ data }) => {
         <Layout>
          <SEO title="Naslovna" />
           <StyledBackgroundSection></StyledBackgroundSection>
+          <FeaturesSection></FeaturesSection>
           <AboutSection></AboutSection>
         </Layout>
         

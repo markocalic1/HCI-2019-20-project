@@ -72,7 +72,7 @@ exports.createPages = async ({actions , graphql}) => {
     })
 
     tags = _.uniq(tags) //rjesavanje duplih tags
-    console.log(tags)
+  
 
 //kreiranje tag stranice
     createPage({

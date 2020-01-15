@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
-import navbarStyles from "./navbar.module.css"
+import navbarStyles from "./style/navbar.module.css"
 
 import BackgroundImage from 'gatsby-background-image'
 

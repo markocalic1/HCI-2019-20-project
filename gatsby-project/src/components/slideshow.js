@@ -21,7 +21,7 @@ function SlideShow() {
           id
           name
           childImageSharp {
-            fluid(maxWidth: 400) {
+            fluid(maxWidth: 600 , maxHeight:600) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -73,7 +73,7 @@ function SlideShow() {
   });
 
   return (
-    <Carousel
+    <Carousel style={{ height:"300px" ,width:"300px"}}
       activeIndex={activeIndex}
       next={next}
       previous={previous}

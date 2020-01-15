@@ -11,7 +11,7 @@ const tagsPage = ({pageContext}) => {
     return(
         <Layout>
             <SEO title="Tags" keywords="tags"/>
-            <Row style={{margin:"auto" ,padding:"5vh"}}>
+            <Row style={{margin:"auto" ,padding:"1vh"}}>
                 <Col md="8">
                     <div style={{margin:"5px" }}>
                         <ul style={{display:"inline-grid"}}>

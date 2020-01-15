@@ -14,7 +14,7 @@ import {
   import 'bootstrap/dist/css/bootstrap.min.css';
   import mainLogo from"../images/logo.webp";
   import { Button } from 'reactstrap';
-  import navbarStyles from "./navbar.module.css"
+  import navbarStyles from "./style/navbar.module.css"
 
 
 const NavLinks = ({ menuItems }) => (
