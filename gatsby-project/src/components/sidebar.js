@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import {Card , CardTitle, CardBody ,Form, FormGroup , Input, Button} from 'reactstrap'
-import { Link ,graphql , useStaticQuery} from "gatsby"
+import { Link ,graphql , useStaticQuery , navigate} from "gatsby"
 import Img from 'gatsby-image'
 import React from "react"
 import {slugify} from '../utils/utilityFunctions'
@@ -42,28 +42,29 @@ const Sidebar = props => {
     return (
     <>
     <div>
-        <Card className="mb-2">
+    <Card className="mb-2">
             <CardBody>
-                <CardTitle  className="text-center text-uppercase mb-3">
-                    Newsletter
+                <CardTitle className="text-canter text-uppercase ">
+                   Filter by Tags
                 </CardTitle>
-                <tagsPage></tagsPage>
-                <Form className="text-center">
-                    <FormGroup>
-                        <Input type="email" name="email"  placeholder="Your email adress.."/>
-                    </FormGroup>
-                    <Button className="btn btn-success text-uppercase">
-                        Subscribe
-                    </Button>
+                
+                    <div style={{display:"inline-grid"}}>
+                        {tagsRow.map(tag =>(
+                        <Link style={{textDecoration:"none" , marginX:"10px"}} to={`/tag/${slugify(tag)}`} key={tag}>
+                            {tag}
+                        </Link>
+                        ))}
 
-                </Form>
+                        
+                    </div>
+                
             </CardBody>
         </Card>
 
         <Card className="mb-2">
             <CardBody>
                 <CardTitle className="text-canter text-uppercase ">
-                    Tags
+                   Filter by Tags
                 </CardTitle>
                 
                     <div style={{display:"inline-grid"}}>

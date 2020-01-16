@@ -14,7 +14,7 @@ const ProductsPage = ({ data }) => {
             flexDirection:"column"
               
         }} >
-        <Layout>
+        <Layout pageName="Products">
          <SEO title="Products" />
          <ProductList></ProductList>
         </Layout>

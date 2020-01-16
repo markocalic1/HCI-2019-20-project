@@ -9,7 +9,7 @@ import { Link } from 'gatsby'
 const tagsPage = ({pageContext}) => {
     const {tags , tagPostCounts} = pageContext;
     return(
-        <Layout>
+        <Layout pageName="Blog">
             <SEO title="Tags" keywords="tags"/>
             <Row style={{margin:"auto" ,padding:"1vh"}}>
                 <Col md="8">

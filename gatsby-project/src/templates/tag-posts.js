@@ -12,7 +12,7 @@ const TagPosts = ({data ,  pageContext}) => {
     const pageHeader = `${totalCount} post${totalCount===1 ? '' : 's'} tagged with "${tag}"`
 
     return(
-        <Layout>
+        <Layout pageName="Blog">
             <SEO title="Tags" />
             
             <Row style={{margin:"auto" ,padding:"1vh"}}>

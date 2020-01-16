@@ -10,7 +10,7 @@ const SalesPage = ({ data }) => {
  
     return (
     <div >
-        <Layout>
+        <Layout pageName="Sales">
          <SEO title="Sales" />
 
         </Layout>

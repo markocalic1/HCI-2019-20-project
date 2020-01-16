@@ -29,3 +29,10 @@
     font-weight:500; 
     padding-bottom:3vh;
 }
+.nav-link:hover{
+    border-bottom: 2px solid;
+
+}
+.active{
+    border-bottom: 2px solid;
+}

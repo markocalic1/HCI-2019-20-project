@@ -14,7 +14,7 @@ const StationPage = ({ data }) => {
             flexDirection:"column"
               
         }} >
-        <Layout>
+        <Layout pageName="Stations">
          <SEO title="Stations" />
          <StationList></StationList>
 

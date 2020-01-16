@@ -20,7 +20,7 @@ class SinglePost extends Component  {
     const post = this.props.data.mdx.frontmatter;
     return(
     <div>
-    <Layout>
+    <Layout pageName="Blog">
           <SEO title={post.title} />
         <div>  
         <Row style={{margin:"auto" ,padding:"1vh"}}>

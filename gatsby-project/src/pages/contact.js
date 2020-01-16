@@ -13,7 +13,7 @@ const ContactPage = ({ data }) => {
             flexDirection:"column"
               
         }} >
-        <Layout>
+        <Layout pageName="Contact">
          <SEO title="Contact" />
 
         </Layout>

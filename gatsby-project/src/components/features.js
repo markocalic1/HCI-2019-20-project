@@ -13,39 +13,37 @@ const FeaturesSection = ({ children }) => {
   return (
     <div >
         <Row style={{display:"inline-flex" , justifyContent:"center " ,width:"100%" , margin:"0" }}>
-            <Card lg="6" className="icon-space"  >
+            <Card lg="6" className="icon-space col-md-3"  >
                     <CardTitle className="icon">
-                        <FontAwesomeIcon icon={faPowerOff} size="4x" color="#17a2b8" />                    
+                        <FontAwesomeIcon icon={faPowerOff} size="2x" color="#17a2b8" />                    
                     </CardTitle>
                     <CardSubtitle  className="card-subtitle" >Remote Control</CardSubtitle>
-                <CardText style={{lineHeight:"1" , color:"grey"}}>
+                <CardText style={{ color:"grey"}}>
                     <ul>
                         Without going to the parcel
-                    </ul>  
-                    <ul>
-                        From any location
+                    
+                        from any location
                     </ul>                  
                 </CardText>
             </Card>
 
-            <Card lg="6" className="icon-space"  >
+            <Card lg="6" className="icon-space col-md-3"  >
                     <CardTitle className="icon">
-                        <FontAwesomeIcon icon={faRocket} size="4x" color="#17a2b8" />                    
+                        <FontAwesomeIcon icon={faRocket} size="2x" color="#17a2b8" />                    
                     </CardTitle>
                     <CardSubtitle className="card-subtitle" >Fast and efficient</CardSubtitle>
-                <CardText style={{lineHeight:"1" , color:"grey"}}>
+                <CardText style={{ color:"grey"}}>
                     <ul>
                             Fully optimized application
-                    </ul>  
-                    <ul>
+                    
                             Easy to use     
                     </ul>                  
                 </CardText>
             </Card>
 
-            <Card sm="4" className="icon-space"  >
+            <Card sm="4" className="icon-space col-md-3"  >
                     <CardTitle className="icon">
-                        <FontAwesomeIcon icon={faBell} size="4x" color="#17a2b8" />                    
+                        <FontAwesomeIcon icon={faBell} size="2x" color="#17a2b8" />                    
                     </CardTitle>
                     <CardSubtitle className="card-subtitle"  >Notifications warning</CardSubtitle>
                 <CardText style={{color:"grey" }}>
@@ -56,9 +54,9 @@ const FeaturesSection = ({ children }) => {
                 </CardText>
             </Card>
             
-            <Card sm="4" className="icon-space"  >
+            <Card sm="4" className="icon-space col-md-3"  >
                     <CardTitle className="icon">
-                        <FontAwesomeIcon icon={faMobileAlt} size="4x" color="#17a2b8" />                    
+                        <FontAwesomeIcon icon={faMobileAlt} size="2x" color="#17a2b8" />                    
                     </CardTitle>
                     <CardSubtitle className="card-subtitle"  >Responsive design</CardSubtitle>
                 <CardText style={{color:"grey" }}>
@@ -69,9 +67,9 @@ const FeaturesSection = ({ children }) => {
                 </CardText>
             </Card>
 
-            <Card  className="icon-space"  sm="4">
+            <Card  className="icon-space col-md-3"  sm="4">
                     <CardTitle className="icon">
-                        <FontAwesomeIcon icon={faCloudDownloadAlt} size="4x" color="#17a2b8" />                    
+                        <FontAwesomeIcon icon={faCloudDownloadAlt} size="2x" color="#17a2b8" />                    
                     </CardTitle>
                     <CardSubtitle className="card-subtitle"  >Availability of data</CardSubtitle>
                 <CardText style={{color:"grey" }}>
@@ -82,9 +80,9 @@ const FeaturesSection = ({ children }) => {
                 </CardText>
             </Card>
 
-            <Card  className="icon-space"  md="4">
+            <Card  className="icon-space col-md-3"  md="4">
                     <CardTitle className="icon">
-                        <FontAwesomeIcon icon={faMedkit} size="4x" color="#17a2b8" />                    
+                        <FontAwesomeIcon icon={faMedkit} size="2x" color="#17a2b8" />                    
                     </CardTitle>
                     <CardSubtitle className="card-subtitle"  >Help</CardSubtitle>
                 <CardText style={{color:"grey" }}>

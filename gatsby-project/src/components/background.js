@@ -31,7 +31,7 @@ const BackgroundSection = ({ className }) => (
                 backgroundColor={`#040e18`}
                 >
                 <StyledInnerWrapper sx={{fontSize:[1,2,3]}}>
-                    <h2>eAgrar</h2>
+                    <p style={{fontSize:"5rem"}}>eAgrar</p>
                     <p>New way of agriculture</p>
 
                 </StyledInnerWrapper>

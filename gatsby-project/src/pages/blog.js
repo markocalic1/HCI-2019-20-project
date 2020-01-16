@@ -52,10 +52,10 @@ const BlogPage = () => {
         <>
           <div>
             
-            <Layout>
+            <Layout pageName="Blog">
               <SEO title="Blog" />
                     
-              <Row style={{margin:"auto" ,padding:"1vh"}}>
+              <Row style={{margin:"auto" ,padding:"3vh" , paddingTop:"7vh" }}>
                 <Col md="8">
                   <div sx={{ }}>
                     
@@ -63,7 +63,6 @@ const BlogPage = () => {
                       query ={blogQuery}
                       render={data =>{
                         numberOfPages = Math.ceil(data.allMdx.totalCount / postsPerPage)
-                        console.log(numberOfPages)
                         return (
                           <div  >
                             {data.allMdx.posts.map(({post}) =>(

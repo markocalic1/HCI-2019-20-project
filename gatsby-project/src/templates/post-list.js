@@ -11,7 +11,7 @@ const postList = props => {
     const posts = props.data.allMdx.edges
     const { currentPage , numberOfPages } = props.pageContext
     return (
-        <Layout>
+        <Layout pageName="Blog">
               <SEO title="Blog" />
                     
               <Row style={{margin:"auo" ,padding:"1vh"}}>

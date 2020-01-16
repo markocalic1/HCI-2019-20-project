@@ -11,19 +11,25 @@ import {
 
   } from 'reactstrap';
 
-  import 'bootstrap/dist/css/bootstrap.min.css';
-  import mainLogo from"../images/logo.webp";
-  import { Button } from 'reactstrap';
-  import navbarStyles from "./style/navbar.module.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import mainLogo from"../images/logo.webp";
+import { Button } from 'reactstrap';
+import navbarStyles from "./style/navbar.module.css"
+import "./style/features.css"
 
+let isCurrent = false
 
-const NavLinks = ({ menuItems }) => (
+const NavLinks = ({ menuItems ,pageName }) => (
   <>
     
     {menuItems.map(menuItem => (
       
       <NavItem >
-        <NavLink href={menuItem.path} activestyle={navbarStyles} >{menuItem.text}</NavLink>
+        {
+        menuItem.text==pageName ? (isCurrent=true):(isCurrent=false)    
+        }
+      
+        <NavLink href={menuItem.path} active={isCurrent} >{menuItem.text}</NavLink>
         
 
       </NavItem>
@@ -31,8 +37,9 @@ const NavLinks = ({ menuItems }) => (
   </>
 )
 
-const Navigation = ({ menuItems }) => {
+const Navigation = ({ menuItems , pageName }) => {
   
+    
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -43,7 +50,7 @@ const Navigation = ({ menuItems }) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mx-auto text-white" navbar>
-             <NavLinks menuItems={menuItems} />
+             <NavLinks menuItems={menuItems} pageName={pageName} />
           </Nav>
           <Button href="/login" className={navbarStyles.signin }>SIGN IN</Button>
 
