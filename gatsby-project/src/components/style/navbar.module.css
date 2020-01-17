@@ -1,13 +1,12 @@
 .signin{
-    background-color:#17a2b8;
+    background-color:#167d26;
     color:white;
-    border-radius: 40px;
 }
 .signin:hover{
-    background-color:#17a2b8;
+    background-color:#10a126;
     color:white;
-    border-radius: 40px;
-    zoom:1.01;
+    transition: all .6s ease-in-out;
+    transform: scale(1.05);
 }
 
 .nav_link:active{

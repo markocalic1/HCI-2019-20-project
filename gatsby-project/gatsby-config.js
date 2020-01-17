@@ -1,3 +1,5 @@
+
+
 module.exports = {
   siteMetadata: {
     title: `eAgrar`,
@@ -20,8 +22,8 @@ module.exports = {
         path: "/stations",
       },
       {
-        text: "Sales",
-        path: "/sales",
+        text: "Shop",
+        path: "/shop",
       },
       {
         text: "Contact",
@@ -53,10 +55,19 @@ module.exports = {
         // Add any options here
       },
     },
+
+    
     "gatsby-plugin-theme-ui",
     `gatsby-plugin-react-helmet`,
     `gatsby-remark-smartypants`,
-
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `d8lrspggm5xb`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: `6dk6ie98YoBV7RlHo2j7shZn-5Dmsbw0_NLcOdY-PmA`,
+      },
+    },
 
     {
       resolve: `gatsby-plugin-mdx`,

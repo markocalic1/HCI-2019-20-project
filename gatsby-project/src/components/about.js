@@ -5,9 +5,9 @@ const AboutSection = ({ children }) => {
 
   return (
     
-      <div Tag="section" className="container mt-4">
+      <div Tag="section" className="container mt-4 pb-5">
            <div className="row">
-                <div className="col-xs-12 col-md-10 col-md-offset-1 mx-auto">
+                <div className=" col-md-12" style={{alignItems:"center"}}>
                    
                     <Slideshow></Slideshow>
                 </div>

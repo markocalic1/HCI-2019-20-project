@@ -1,7 +1,8 @@
 import React from "react"
 import { Row , Card , CardTitle , CardSubtitle ,CardText} from 'reactstrap'
 import {Img} from 'gatsby-image' 
-import { faRocket , faCloudDownloadAlt, faBell, faPowerOff , faMobileAlt , faMedkit} from '@fortawesome/free-solid-svg-icons'
+import { faRocket , faCloudDownloadAlt, faBell, faWifi , faMobileAlt , faMedkit} from '@fortawesome/free-solid-svg-icons'
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import  './style/features.css'
 const FeaturesSection = ({ children }) => {
@@ -15,7 +16,7 @@ const FeaturesSection = ({ children }) => {
         <Row style={{display:"inline-flex" , justifyContent:"center " ,width:"100%" , margin:"0" }}>
             <Card lg="6" className="icon-space col-md-3"  >
                     <CardTitle className="icon">
-                        <FontAwesomeIcon icon={faPowerOff} size="2x" color="#17a2b8" />                    
+                        <FontAwesomeIcon icon={faWifi} size="2x" color="#167d26" />                    
                     </CardTitle>
                     <CardSubtitle  className="card-subtitle" >Remote Control</CardSubtitle>
                 <CardText style={{ color:"grey"}}>
@@ -29,7 +30,7 @@ const FeaturesSection = ({ children }) => {
 
             <Card lg="6" className="icon-space col-md-3"  >
                     <CardTitle className="icon">
-                        <FontAwesomeIcon icon={faRocket} size="2x" color="#17a2b8" />                    
+                        <FontAwesomeIcon icon={faRocket} size="2x" color="#167d26" />                    
                     </CardTitle>
                     <CardSubtitle className="card-subtitle" >Fast and efficient</CardSubtitle>
                 <CardText style={{ color:"grey"}}>
@@ -43,12 +44,12 @@ const FeaturesSection = ({ children }) => {
 
             <Card sm="4" className="icon-space col-md-3"  >
                     <CardTitle className="icon">
-                        <FontAwesomeIcon icon={faBell} size="2x" color="#17a2b8" />                    
+                        <FontAwesomeIcon icon={faBell} size="2x" color="#167d26" />                    
                     </CardTitle>
                     <CardSubtitle className="card-subtitle"  >Notifications warning</CardSubtitle>
                 <CardText style={{color:"grey" }}>
                     <ul>
-                    notifies users of the possible appearance of the disease (bumps, ashtrays, feather spores)                 
+                    Notifies users of the possible appearance of the disease
                     </ul>  
                                       
                 </CardText>
@@ -56,7 +57,7 @@ const FeaturesSection = ({ children }) => {
             
             <Card sm="4" className="icon-space col-md-3"  >
                     <CardTitle className="icon">
-                        <FontAwesomeIcon icon={faMobileAlt} size="2x" color="#17a2b8" />                    
+                        <FontAwesomeIcon icon={faMobileAlt} size="2x" color="#167d26" />                    
                     </CardTitle>
                     <CardSubtitle className="card-subtitle"  >Responsive design</CardSubtitle>
                 <CardText style={{color:"grey" }}>
@@ -69,12 +70,12 @@ const FeaturesSection = ({ children }) => {
 
             <Card  className="icon-space col-md-3"  sm="4">
                     <CardTitle className="icon">
-                        <FontAwesomeIcon icon={faCloudDownloadAlt} size="2x" color="#17a2b8" />                    
+                        <FontAwesomeIcon icon={faCloudDownloadAlt} size="2x" color="#167d26" />                    
                     </CardTitle>
                     <CardSubtitle className="card-subtitle"  >Availability of data</CardSubtitle>
                 <CardText style={{color:"grey" }}>
                     <ul>
-                    dashboard with icons, charts, and tables               
+                    Dashboard with icons, charts, and tables               
                     </ul>  
                                       
                 </CardText>
@@ -82,12 +83,12 @@ const FeaturesSection = ({ children }) => {
 
             <Card  className="icon-space col-md-3"  md="4">
                     <CardTitle className="icon">
-                        <FontAwesomeIcon icon={faMedkit} size="2x" color="#17a2b8" />                    
+                        <FontAwesomeIcon icon={faMedkit} size="2x" color="#167d26" />                    
                     </CardTitle>
                     <CardSubtitle className="card-subtitle"  >Help</CardSubtitle>
                 <CardText style={{color:"grey" }}>
                     <ul>
-                    earn savings in the use of chemicals, fuels and water         
+                    Earn savings in the use of chemicals, fuels and water         
                     </ul>  
                                       
                 </CardText>

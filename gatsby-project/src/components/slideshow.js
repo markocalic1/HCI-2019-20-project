@@ -21,7 +21,7 @@ function SlideShow() {
           id
           name
           childImageSharp {
-            fluid(maxWidth: 600 , maxHeight:600) {
+            fluid(maxHeight:300, maxWidth:500) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -53,7 +53,6 @@ function SlideShow() {
   }
 
   const items =allFile.edges;
-  console.log(items);
   const slides = items.map((node) => {
     return (
       <CarouselItem
@@ -73,7 +72,7 @@ function SlideShow() {
   });
 
   return (
-    <Carousel style={{ height:"300px" ,width:"300px"}}
+    <Carousel style={{ height:"90%" ,width:"90%"}}
       activeIndex={activeIndex}
       next={next}
       previous={previous}

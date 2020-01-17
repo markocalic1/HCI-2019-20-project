@@ -18,10 +18,10 @@ const Post = ({ title ,author, date , slug , body, fluid , tags  }) => {
         className="card-image-top" fluid={fluid}/>
       </Link>
       <CardBody>
-        <CardTitle><Link style={{textDecoration:"none" ,fontWeight:"bold", fontSize:[2,3,4]}} to={slug}>{title}</Link></CardTitle>
-        <CardSubtitle> 
-        <span className="text-info">{date} by </span>
-        <span className="text-info">{author}</span>
+        <CardTitle><Link style={{textDecoration:"none" ,fontWeight:"bold", fontSize:"1.4rem" , color:"#167d26"}} to={slug}>{title}</Link></CardTitle>
+        <CardSubtitle style={{color:"#47ad57"}}> 
+        <span  >{date} by </span>
+        <span >{author}</span>
 
         </CardSubtitle>
         <CardText>{body}</CardText>
@@ -34,15 +34,17 @@ const Post = ({ title ,author, date , slug , body, fluid , tags  }) => {
           {tags.map(tag => (
             <li key={tag}>
               <Link to={`/tag/${slugify(tag)}`}>
-                <Badge color="primary" sx={{
+                <Badge  sx={{
+                  backgroundColor:"#167d26",
                   margin:"2px",
-                  fontSize:"1.5vh"
+                  fontSize:"1.5vh",
+                  padding:"0.35rem"
                 }}>{tag.toUpperCase()}</Badge>
               </Link>
             </li>
           ))}
         </ul>
-        <Link to={slug} className="btn btn-outline-primary float-right t">
+        <Link to={slug} className="btn  float-right " style={{backgroundColor:"#167d26" ,color:"white"}}>
           Read more ->
         </Link>
       </CardBody>
@@ -55,31 +57,3 @@ const Post = ({ title ,author, date , slug , body, fluid , tags  }) => {
 
 export default Post
 
-// export const postQuery = graphql`
-//   query($id: String!) {
-//     wordpressPost(id: { eq: $id }) {
-//       title
-//       content
-//     }
-//     site {
-//       siteMetadata {
-//         title
-        
-//       }
-//     }
-//     allWordpressPost {
-//       edges {
-//         node {
-//           title
-//           excerpt
-//           slug
-//           date(formatString: "MMMM D, YYYY")
-//           categories {
-//             name
-//             id
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
