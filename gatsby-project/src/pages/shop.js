@@ -36,7 +36,7 @@ export const query = graphql`
         image {
           fluid(maxHeight:400 , maxWidth:400 , quality:100) {
             src
-            ...GatsbyContentfulFluid_tracedSVG
+            ...GatsbyContentfulFluid_withWebp_noBase64
           }
         }
       }
