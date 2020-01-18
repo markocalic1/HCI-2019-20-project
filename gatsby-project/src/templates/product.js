@@ -26,7 +26,7 @@ const Product = ({ id, title ,description, price ,fluid}) => {
     data-item-name={title}
     data-item-price={price}
     data-item-image={fluid.src}
-    data-item-url="https://eagrar.netlify.com/shop/"
+    data-item-url="/shop/"
     
     >add to cart</button></CardFooter>
 
