@@ -10,7 +10,6 @@ import { faLinkedin , faTwitter, faFacebookF } from '@fortawesome/free-brands-sv
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import { MDXProvider } from "@mdx-js/react"
-import { FacebookProvider, Comments , Share } from 'react-facebook';
 
 
 const baseUrl="https://eagrar.netlify.com/"

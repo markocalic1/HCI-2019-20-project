@@ -1,4 +1,6 @@
-
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -63,15 +65,15 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `d8lrspggm5xb`,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: `6dk6ie98YoBV7RlHo2j7shZn-5Dmsbw0_NLcOdY-PmA`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {
 			resolve: 'gatsby-plugin-snipcart',
 			options: {
-        apiKey: 'ZWIwYjYyMTktZGFjOS00MDQ4LTljYmEtNGQ2NmQ3Mjg5OGYxNjM3MTQ5MDQ3OTU4MzkzOTY5',
+        apiKey: process.env.SNIPCART_API_KEY,
         autopop:true
 			}
 		},

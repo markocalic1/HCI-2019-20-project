@@ -26,7 +26,7 @@ const Product = ({ id, title ,description, price ,fluid}) => {
     data-item-name={title}
     data-item-price={price}
     data-item-image={fluid.src}
-    data-item-url="/shop/"
+    data-item-url="/"
     
     >add to cart</button></CardFooter>
 
