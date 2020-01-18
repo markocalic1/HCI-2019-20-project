@@ -5,6 +5,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 import {
   Card,  CardBody, CardSubtitle,CardTitle
 } from 'reactstrap';
+import BackgroundImage from 'gatsby-background-image'
+
 
 const StationList = () => {
     const data = useStaticQuery(graphql`
@@ -17,21 +19,26 @@ const StationList = () => {
               location
               last_update
               temperature
+              humidity
+              air_pressure
               
             }
           }
         }
       }
+      
     }
   `)
 
   const {
     allMdx: { stations },
+    file : file
   } = data
       
   return(
-  <div sx={{    textAlign:"-webkit-center",
+  <div sx={{   textAlign:"-webkit-center",
   }}>
+    
    {stations &&
         stations.map(({ station }) => {
           return (
@@ -41,12 +48,16 @@ const StationList = () => {
               padding:4,
                         }}>
             <Card sx={{
-                backgroundColor:"lightGreen"
+                backgroundColor:"#ffffff87",
+                
             }} className="text-left p-2">
               
                 <CardTitle className="text-uppercase  h4">{station.frontmatter.location}</CardTitle>
-                <CardSubtitle>Temperature :{station.frontmatter.temperature}</CardSubtitle>
-                <CardSubtitle>Last update :{station.frontmatter.last_update}</CardSubtitle>
+                <CardSubtitle style={{fontSize:"3rem" , paddingBottom:"0"}}>{station.frontmatter.temperature}°C</CardSubtitle>
+                <CardSubtitle style={{color:"#525252" , fontWeight:"400", paddingBottom:"0"}}>Humidity: {station.frontmatter.humidity}%</CardSubtitle>
+                <CardSubtitle style={{color:"#525252" , fontWeight:"400",  }}>Air pressure: {station.frontmatter.air_pressure} hPa</CardSubtitle>
+
+                <CardSubtitle style={{color:"#525252" , fontWeight:"400" , paddingTop:"15px" ,paddingBottom:"0px" , fontSize:"0.8rem"}}>Last update :{station.frontmatter.last_update}</CardSubtitle>
 
 
             
