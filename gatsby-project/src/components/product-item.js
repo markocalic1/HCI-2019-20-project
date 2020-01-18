@@ -46,7 +46,7 @@ export default class ProductList extends Component {
            
             return(<section className="menu py-5">
             <div className="">
-                <Row>
+                <Row style={{width:"100%" , margin:"0"}}>
                     <Col >
                         <Row className="mx-auto justify-content-center px-2">
                             

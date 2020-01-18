@@ -18,7 +18,7 @@ const Product = ({ id, title ,description, price ,fluid}) => {
       </Link>
       <CardBody>
         <CardTitle><Link style={{textDecoration:"none" ,fontWeight:"bold" , fontSize:"1rem",color:"#167d26"}} >{title}</Link></CardTitle>
-        {/* <CardText>{description}</CardText>         */}
+        <CardText style={{lineHeight:"1rem" , fontSize:"small"}}>{description}</CardText>        
       </CardBody>
     <CardFooter sx={{fontWeight:"bold" }}>{price} HRK <button className="btn btn-sm btn-outline-success text-capitalize float-right 
     snipcart-add-item"

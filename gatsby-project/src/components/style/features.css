@@ -35,15 +35,24 @@
 }
 
 .snip-layout{
-    margin-top: 78px;
+    margin-top: 50px;
+    border-radius: 2px!important;
 
 }
 
 .snip-header {
     background:#157d26!important;
+    border-radius: 2px!important;
+
 }
 
 .snip-footer {
     background:#157d26!important;
     color:white!important;
+    border-radius: 2px!important;
+
+}
+
+.snip-layout__main-container{
+    margin-top: 50px!important;
 }
