@@ -54,10 +54,8 @@ const Navigation = ({ menuItems , pageName }) => {
           <Nav className="mx-auto text-white" navbar>
              <NavLinks menuItems={menuItems} pageName={pageName} />
           </Nav>
-          <div className="d-flex">
             <FontAwesomeIcon icon={faCartArrowDown} size="1x" color="#167d26" className="cart-icon snipcart-checkout" style={{marginRight:"7px" }}/>
             <Button href="/login" className={navbarStyles.signin }>SIGN IN</Button>
-          </div>
           </Collapse>
         </Navbar>
       </div>
