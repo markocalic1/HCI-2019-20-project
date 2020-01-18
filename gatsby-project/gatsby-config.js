@@ -68,6 +68,13 @@ module.exports = {
         accessToken: `6dk6ie98YoBV7RlHo2j7shZn-5Dmsbw0_NLcOdY-PmA`,
       },
     },
+    {
+			resolve: 'gatsby-plugin-snipcart',
+			options: {
+        apiKey: 'ZWIwYjYyMTktZGFjOS00MDQ4LTljYmEtNGQ2NmQ3Mjg5OGYxNjM3MTQ5MDQ3OTU4MzkzOTY5',
+        autopop:true
+			}
+		},
 
     {
       resolve: `gatsby-plugin-mdx`,

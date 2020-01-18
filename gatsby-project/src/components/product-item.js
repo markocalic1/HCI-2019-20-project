@@ -58,7 +58,8 @@ export default class ProductList extends Component {
                         <Row style={{justifyContent:"center" ,margin:"auto"}}>
                             {this.state.productItems.map(({node}) =>{
                                 return(
-                                        <Product 
+                                        <Product
+                                        id={node.id}
                                         title={node.title}
                                         description={node.description.description}
                                         price={node.price}

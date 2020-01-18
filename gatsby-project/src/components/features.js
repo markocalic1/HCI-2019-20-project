@@ -5,6 +5,7 @@ import { faRocket , faCloudDownloadAlt, faBell, faWifi , faMobileAlt , faMedkit}
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import  './style/features.css'
+
 const FeaturesSection = ({ children }) => {
 
     function hoverIcon(e) {

@@ -10,14 +10,14 @@ import {slugify} from '../utils/utilityFunctions'
 
 const Post = ({ title ,author, date , slug , body, fluid , tags  }) => {
     return (
-    <Card sx={{marginBottom:"3vh"  }}>
+    <Card sx={{marginBottom:"2vh"  }}>
       <Link to={slug}>
       <Img sx={{
         maxHeight:"40vh"
         }}
         className="card-image-top" fluid={fluid}/>
       </Link>
-      <CardBody>
+      <CardBody style={{paddingBottom:"0rem"}}>
         <CardTitle><Link style={{textDecoration:"none" ,fontWeight:"bold", fontSize:"1.4rem" , color:"#167d26"}} to={slug}>{title}</Link></CardTitle>
         <CardSubtitle style={{color:"#47ad57"}}> 
         <span  >{date} by </span>

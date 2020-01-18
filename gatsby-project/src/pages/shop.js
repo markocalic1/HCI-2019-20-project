@@ -35,6 +35,7 @@ export const query = graphql`
         category
         image {
           fluid(maxHeight:400 , maxWidth:400 , quality:100) {
+            src
             ...GatsbyContentfulFluid_tracedSVG
           }
         }

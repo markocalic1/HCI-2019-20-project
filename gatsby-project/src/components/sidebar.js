@@ -50,7 +50,7 @@ const Sidebar = props => {
                 
                     <div style={{display:"inline-grid"}}>
                         {tagsRow.map(tag =>(
-                        <Link style={{textDecoration:"none" , marginX:"10px"}} to={`/tag/${slugify(tag)}`} key={tag}>
+                        <Link style={{textDecoration:"none" , marginX:"10px" ,color:"#167d26"}} to={`/tag/${slugify(tag)}`} key={tag}>
                             {tag}
                         </Link>
                         ))}
@@ -61,24 +61,7 @@ const Sidebar = props => {
             </CardBody>
         </Card>
 
-        <Card className="mb-2">
-            <CardBody>
-                <CardTitle className="text-canter text-uppercase ">
-                   Filter by Tags
-                </CardTitle>
-                
-                    <div style={{display:"inline-grid"}}>
-                        {tagsRow.map(tag =>(
-                        <Link style={{textDecoration:"none" , marginX:"10px"}} to={`/tag/${slugify(tag)}`} key={tag}>
-                            {tag}
-                        </Link>
-                        ))}
-
-                        
-                    </div>
-                
-            </CardBody>
-        </Card>
+        
 
         <Card className="mb-2">
             <CardBody>
@@ -105,7 +88,8 @@ const Sidebar = props => {
                                     <CardTitle sx={{padding:"0.30rem"}}>
                                         <Link style={{textDecoration:"none",
                                                      fontWeight:"bold"  , 
-                                                     fontSize:[1 , 2 ,3]                                                
+                                                     fontSize:"0.7rem",
+                                                     color:"#167d26"                                                
                                                     
                                                 }}
                                               to={post.fields.slug} >

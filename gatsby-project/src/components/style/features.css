@@ -12,9 +12,6 @@
     -webkit-transition: all .6s;
     -webkit-transform: scale(1.2);
     
-
-
-
 }
 .icon{
     padding-bottom: 5px;
@@ -35,4 +32,18 @@
 }
 .active{
     border-bottom: 2px solid;
+}
+
+.snip-layout{
+    margin-top: 78px;
+
+}
+
+.snip-header {
+    background:#157d26!important;
+}
+
+.snip-footer {
+    background:#157d26!important;
+    color:white!important;
 }

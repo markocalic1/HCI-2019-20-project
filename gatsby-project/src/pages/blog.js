@@ -55,7 +55,7 @@ const BlogPage = () => {
             <Layout pageName="Blog">
               <SEO title="Blog" />
                     
-              <Row style={{margin:"auto" ,padding:"3vh" , paddingTop:"7vh" }}>
+              <Row style={{margin:"auto" ,padding:"2vh" , paddingTop:"3vh" }}>
                 <Col md="8">
                   <div sx={{ }}>
                     

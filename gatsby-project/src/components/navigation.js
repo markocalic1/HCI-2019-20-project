@@ -16,6 +16,8 @@ import mainLogo from"../images/logo.webp";
 import { Button } from 'reactstrap';
 import navbarStyles from "./style/navbar.module.css"
 import "./style/features.css"
+import { faCartArrowDown} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 let isCurrent = false
 
@@ -52,8 +54,10 @@ const Navigation = ({ menuItems , pageName }) => {
           <Nav className="mx-auto text-white" navbar>
              <NavLinks menuItems={menuItems} pageName={pageName} />
           </Nav>
-          <Button href="/login" className={navbarStyles.signin }>SIGN IN</Button>
-
+          <div className="d-flex">
+            <FontAwesomeIcon icon={faCartArrowDown} size="1x" color="#167d26" className="cart-icon snipcart-checkout" style={{marginRight:"7px" }}/>
+            <Button href="/login" className={navbarStyles.signin }>SIGN IN</Button>
+          </div>
           </Collapse>
         </Navbar>
       </div>

@@ -21,7 +21,7 @@ function SlideShow() {
           id
           name
           childImageSharp {
-            fluid(maxHeight:300, maxWidth:500) {
+            fluid(maxHeight:300, maxWidth:500, quality:100) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
