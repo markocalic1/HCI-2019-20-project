@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import {Card , CardTitle, CardBody ,Form, FormGroup , Input, Button} from 'reactstrap'
-import { Link ,graphql , useStaticQuery , navigate} from "gatsby"
+import {Card , CardTitle, CardBody } from 'reactstrap'
+import { Link ,graphql , useStaticQuery } from "gatsby"
 import Img from 'gatsby-image'
 import React from "react"
 import {slugify} from '../utils/utilityFunctions'

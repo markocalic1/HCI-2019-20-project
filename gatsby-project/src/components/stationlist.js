@@ -5,7 +5,6 @@ import { graphql, useStaticQuery } from 'gatsby'
 import {
   Card,  CardBody, CardSubtitle,CardTitle
 } from 'reactstrap';
-import BackgroundImage from 'gatsby-background-image'
 
 
 const StationList = () => {
@@ -32,7 +31,7 @@ const StationList = () => {
 
   const {
     allMdx: { stations },
-    file : file
+    
   } = data
       
   return(

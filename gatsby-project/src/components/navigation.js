@@ -28,7 +28,7 @@ const NavLinks = ({ menuItems ,pageName }) => (
       
       <NavItem >
         {
-        menuItem.text==pageName ? (isCurrent=true):(isCurrent=false)    
+        menuItem.text===pageName ? (isCurrent=true):(isCurrent=false)    
         }
       
         <NavLink href={menuItem.path} active={isCurrent} >{menuItem.text}</NavLink>

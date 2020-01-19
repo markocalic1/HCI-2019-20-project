@@ -1,6 +1,5 @@
 import React , {Component} from 'react'
-import Img from 'gatsby-image'
-import { Row , Col , Card, Button } from 'reactstrap'
+import { Row , Col  } from 'reactstrap'
 import Product from '../templates/product'
 
 const getCategories = items  => {

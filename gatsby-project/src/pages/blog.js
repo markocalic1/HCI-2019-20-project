@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import {  graphql, StaticQuery } from "gatsby"
 import Post from "../components/post"
-import {Row ,Col, Pagination} from 'reactstrap'
+import {Row ,Col} from 'reactstrap'
 import Sidebar from '../components/sidebar'
 import React from "react"
 import PaginationLinks from '../components/paginationLinks'

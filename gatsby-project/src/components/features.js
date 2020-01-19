@@ -1,6 +1,5 @@
 import React from "react"
 import { Row , Card , CardTitle , CardSubtitle ,CardText} from 'reactstrap'
-import {Img} from 'gatsby-image' 
 import { faRocket , faCloudDownloadAlt, faBell, faWifi , faMobileAlt , faMedkit} from '@fortawesome/free-solid-svg-icons'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -8,9 +7,7 @@ import  './style/features.css'
 
 const FeaturesSection = ({ children }) => {
 
-    function hoverIcon(e) {
-        e.target.style.zoom = '1.05';
-      }
+    
 
   return (
     <div >

@@ -21,7 +21,7 @@ const StationPage = ({ data }) => {
 
          <BackgroundImage
             Tag="div"
-            sx={{width:"100%" , height:"85vh", backgroundPosition:"bottom center" , backgroundRepeat:"repeat-y" , backgroundSize:"cover" ,  minHeight:"100%" ,width:"100%"}}
+            sx={{ height:"85vh", backgroundPosition:"bottom center" , backgroundRepeat:"repeat-y" , backgroundSize:"cover" ,  minHeight:"100%" ,width:"100%"}}
             fluid={data.file.childImageSharp.fluid}          
           >
                      <StationList></StationList>
