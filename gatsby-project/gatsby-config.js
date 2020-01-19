@@ -62,6 +62,7 @@ module.exports = {
     "gatsby-plugin-theme-ui",
     `gatsby-plugin-react-helmet`,
     `gatsby-remark-smartypants`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
