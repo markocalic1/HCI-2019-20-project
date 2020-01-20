@@ -64,6 +64,13 @@ module.exports = {
     `gatsby-remark-smartypants`,
     `gatsby-plugin-netlify`,
     {
+      resolve: `gatsby-plugin-catch-links`,
+      options: {
+        excludePattern: /(excluded-link|external)/,
+      },
+    },
+    
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,

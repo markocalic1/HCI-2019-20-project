@@ -31,7 +31,7 @@ const NavLinks = ({ menuItems ,pageName }) => (
         menuItem.text===pageName ? (isCurrent=true):(isCurrent=false)    
         }
       
-        <NavLink href={menuItem.path} active={isCurrent} >{menuItem.text}</NavLink>
+        <NavLink key={menuItem.path} href={menuItem.path} active={isCurrent} >{menuItem.text}</NavLink>
         
 
       </NavItem>

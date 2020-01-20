@@ -58,7 +58,7 @@ function SlideShow() {
       <CarouselItem
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
-        key={node.id}
+        key={node.node.id}
       >
         <Img
           fluid={node.node.childImageSharp.fluid}
