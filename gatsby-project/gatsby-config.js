@@ -31,8 +31,6 @@ module.exports = {
         text: "Contact",
         path: "/contact",
       },
-     
-     
     ],
     author: `MC`,
   },
@@ -48,7 +46,7 @@ module.exports = {
     //     protocol: `http`,
     //     hostingWPCOM: false,
     //     useACF: false,
-        
+
     //   },
     // },
     {
@@ -58,7 +56,6 @@ module.exports = {
       },
     },
 
-    
     "gatsby-plugin-theme-ui",
     `gatsby-plugin-react-helmet`,
     `gatsby-remark-smartypants`,
@@ -69,7 +66,7 @@ module.exports = {
         excludePattern: /(excluded-link|external)/,
       },
     },
-    
+
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -79,12 +76,12 @@ module.exports = {
       },
     },
     {
-			resolve: 'gatsby-plugin-snipcart',
-			options: {
+      resolve: "gatsby-plugin-snipcart",
+      options: {
         apiKey: process.env.SNIPCART_API_KEY,
-        autopop:true
-			}
-		},
+        autopop: true,
+      },
+    },
 
     {
       resolve: `gatsby-plugin-mdx`,
@@ -99,7 +96,6 @@ module.exports = {
             },
           },
           `gatsby-remark-smartypants`,
-
         ],
         plugins: [
           {
@@ -172,9 +168,7 @@ module.exports = {
         // GitHub Flavored Markdown mode (default: true)
         gfm: true,
         // Plugins configs
-        plugins: [
-          
-        ],
+        plugins: [],
       },
     },
 
@@ -194,10 +188,23 @@ module.exports = {
         // Delays sending pageview hits on route update (in milliseconds)
         pageTransitionDelay: 0,
         // Enables Google Optimize using your container Id
-      
+
         sampleRate: 5,
         siteSpeedSampleRate: 10,
         cookieDomain: "eagrar.netlify.com",
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `eAgrar`,
+        short_name: `eAgrar`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

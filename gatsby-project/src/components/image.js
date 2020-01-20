@@ -15,22 +15,22 @@ import Img from "gatsby-image"
 
 const Image = () => {
   const data = useStaticQuery(graphql`
-  {
-    allFile(filter: {relativePath: {eq: "logo.png"}}) {
-      edges {
-        node {
-          id
-          name
-          childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed
+    {
+      allFile(filter: { relativePath: { eq: "logo.png" } }) {
+        edges {
+          node {
+            id
+            name
+            childImageSharp {
+              fixed {
+                ...GatsbyImageSharpFixed
+              }
             }
           }
         }
       }
     }
-  }
-`)
+  `)
 
   return <Img fixed={data.allFile.edges.node.childImageSharp.fixed} />
 }

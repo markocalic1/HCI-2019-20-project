@@ -4,9 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "../components/navigation"
 import FooterContainer from "../components/footer"
 
-
-
-const Layout = ({ children  ,pageName}) => {
+const Layout = ({ children, pageName }) => {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -22,15 +20,13 @@ const Layout = ({ children  ,pageName}) => {
 
   return (
     <>
-      
-      
-        <Navigation menuItems={data.site.siteMetadata.menuItems} pageName={pageName}/>
-        <div style={{marginTop:"75px"}}>
-          {children}
-        </div>
-        
-        <FooterContainer></FooterContainer>
+      <Navigation
+        menuItems={data.site.siteMetadata.menuItems}
+        pageName={pageName}
+      />
+      <div style={{ marginTop: "75px" }}>{children}</div>
 
+      <FooterContainer></FooterContainer>
     </>
   )
 }

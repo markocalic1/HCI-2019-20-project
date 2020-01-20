@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { graphql, StaticQuery } from 'gatsby'
-import styled from 'styled-components'
+import { graphql, StaticQuery } from "gatsby"
+import styled from "styled-components"
 import navbarStyles from "./style/navbar.module.css"
 
-import BackgroundImage from 'gatsby-background-image'
+import BackgroundImage from "gatsby-background-image"
 
 const BackgroundSection = ({ className }) => (
   <StaticQuery
@@ -23,23 +23,22 @@ const BackgroundSection = ({ className }) => (
       // Set ImageData.
       const imageData = data.desktop.childImageSharp.fluid
       return (
-        <div className={navbarStyles.overlay} sx={{height:"50vh"}}>
-            <BackgroundImage
-                Tag="section"
-                className={className}
-                fluid={imageData}
-                backgroundColor={`#040e18`}
-                >
-                <StyledInnerWrapper sx={{fontSize:[1,2,3]}}>
-                    <p style={{fontSize:"5rem"}}>eAgrar</p>
-                    <p>New way of agriculture</p>
-
-                </StyledInnerWrapper>
-                <div className={navbarStyles.thimLineEffect}>
-                    <div className={navbarStyles.imageCut}></div>
-                    <div className={navbarStyles.imageCut}></div>
-                </div>
-            </BackgroundImage>
+        <div className={navbarStyles.overlay} sx={{ height: "50vh" }}>
+          <BackgroundImage
+            Tag="section"
+            className={className}
+            fluid={imageData}
+            backgroundColor={`#040e18`}
+          >
+            <StyledInnerWrapper sx={{ fontSize: [1, 2, 3] }}>
+              <p style={{ fontSize: "5rem" }}>eAgrar</p>
+              <p>New way of agriculture</p>
+            </StyledInnerWrapper>
+            <div className={navbarStyles.thimLineEffect}>
+              <div className={navbarStyles.imageCut}></div>
+              <div className={navbarStyles.imageCut}></div>
+            </div>
+          </BackgroundImage>
         </div>
       )
     }}
@@ -47,12 +46,11 @@ const BackgroundSection = ({ className }) => (
 )
 
 const StyledInnerWrapper = styled.div`
-    
-    justify-content: center;
+  justify-content: center;
 
-    height: 40vh;
-    color:white;
-    display: flex;
+  height: 40vh;
+  color: white;
+  display: flex;
   flex-direction: column;
   align-items: center;
 `

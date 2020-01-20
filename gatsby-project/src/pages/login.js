@@ -2,12 +2,13 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-
-const LoginPage = () => <div>
+const LoginPage = () => (
+  <div>
     <Layout>
-    <SEO title="Login" />
-        Login page 
+      <SEO title="Login" />
+      Login page
     </Layout>
-</div>
+  </div>
+)
 
 export default LoginPage
