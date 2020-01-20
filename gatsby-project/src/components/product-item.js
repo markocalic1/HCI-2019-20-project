@@ -81,9 +81,15 @@ export default class ProductList extends Component {
                             .toLowerCase()
                             .includes(e.target.value.toLowerCase())
                         )
-                        this.setState(() => {
-                          return { productItems: items }
-                        })
+                        if (items.length > 0) {
+                          this.setState(() => {
+                            return { productItems: items }
+                          })
+                        } else {
+                          this.setState(() => {
+                            return { productItems: tempItems }
+                          })
+                        }
                       }}
                     />
                   </div>
