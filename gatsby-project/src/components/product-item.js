@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Row, Col } from "reactstrap"
+import { Row, Col, Input, FormControl } from "reactstrap"
 import Product from "../templates/product"
 
 const getCategories = items => {
@@ -23,7 +23,6 @@ export default class ProductList extends Component {
     }
   }
   handleItems = category => {
-    console.log(category)
     let tempItems = [...this.state.items]
     if (category === "all") {
       this.setState(() => {
@@ -37,27 +36,72 @@ export default class ProductList extends Component {
     }
   }
 
+  // handleSearch = searchValue => {
+  //   const [searchTerm, setSearchTerm] = React.useState("")
+  //   setSearchTerm(searchValue.target.value)
+  //   let tempItems = [...this.state.items]
+
+  //   let items = tempItems.filter(({ node }) => {
+  //     const title = node.title.toLowerCase()
+
+  //     if (title.includes(searchValue.toLowerCase())) {
+  //       this.setState(() => {
+  //         return { productItems: items }
+  //       })
+  //     }
+  //   })
+  // }
+
   render() {
     if (this.state.items.length > 0) {
       return (
-        <section className="menu py-5">
+        <section className="menu py-2">
           <div className="">
             <Row style={{ width: "100%", margin: "0" }}>
               <Col>
-                <Row className="mx-auto justify-content-center px-2">
-                  <h6>Filter by category :</h6>
-                  {this.state.categories.map((category, index) => {
-                    return (
-                      <button
-                        key={index}
-                        className=" btn text-capitalize mx-2 mb-3"
-                        style={{ backgroundColor: "#167d26", color: "white" }}
-                        onClick={() => this.handleItems(category)}
-                      >
-                        {category}
-                      </button>
-                    )
-                  })}
+                <Row
+                  className="mx-auto justify-content-center px-2"
+                  style={{ width: "fit-content" }}
+                >
+                  <div
+                    className="searchbar"
+                    style={{
+                      height: "38px",
+                      margin: "auto",
+                      paddingTop: "10px",
+                    }}
+                  >
+                    <Input
+                      placeholder="Search products"
+                      onChange={e => {
+                        let tempItems = [...this.state.items]
+
+                        let items = tempItems.filter(({ node }) =>
+                          node.title
+                            .toLowerCase()
+                            .includes(e.target.value.toLowerCase())
+                        )
+                        this.setState(() => {
+                          return { productItems: items }
+                        })
+                      }}
+                    />
+                  </div>
+                  <div style={{ textAlign: "center", paddingTop: "15px" }}>
+                    <h6>Filter by category :</h6>
+                    {this.state.categories.map((category, index) => {
+                      return (
+                        <button
+                          key={index}
+                          className=" btn text-capitalize mx-2 mb-3"
+                          style={{ backgroundColor: "#167d26", color: "white" }}
+                          onClick={() => this.handleItems(category)}
+                        >
+                          {category}
+                        </button>
+                      )
+                    })}
+                  </div>
                 </Row>
                 <Row style={{ justifyContent: "center", margin: "auto" }}>
                   {this.state.productItems.map(({ node }) => {
