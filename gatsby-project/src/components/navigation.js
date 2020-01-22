@@ -52,7 +52,7 @@ const Navigation = ({ menuItems, pageName }) => {
           <Nav className="mx-auto text-white" navbar>
             <NavLinks menuItems={menuItems} pageName={pageName} />
           </Nav>
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             icon={faCartArrowDown}
             size="1x"
             color="white"
@@ -60,7 +60,7 @@ const Navigation = ({ menuItems, pageName }) => {
             style={{ marginRight: "10px" }}
           >
             Cart
-          </FontAwesomeIcon>
+          </FontAwesomeIcon> */}
           <Button href="/login" className={navbarStyles.signin}>
             SIGN IN
           </Button>

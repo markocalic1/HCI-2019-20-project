@@ -40,12 +40,12 @@ const Product = ({ id, title, description, price, fluid }) => {
         {price} HRK{" "}
         <button
           className="btn btn-sm btn-outline-success text-capitalize float-right 
-    snipcart-add-item"
-          data-item-id={id}
-          data-item-name={title}
-          data-item-price={price}
-          data-item-image={fluid.src}
-          data-item-url="https://eagrar.netlify.com/shop/"
+    "
+          // data-item-id={id}
+          // data-item-name={title}
+          // data-item-price={price}
+          // data-item-image={fluid.src}
+          // data-item-url="https://eagrar.netlify.com/shop/"
         >
           add to cart
         </button>
