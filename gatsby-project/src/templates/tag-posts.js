@@ -27,7 +27,7 @@ const TagPosts = ({ data, pageContext }) => {
               author={node.author}
               date={node.date}
               slug={node.slug}
-              body={node.body.body}
+              body={node.body.json}
               fluid={node.image.fluid}
               category={node.category}
             />
