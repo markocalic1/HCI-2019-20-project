@@ -28,7 +28,7 @@ const FeaturesSection = ({ children }) => {
             <FontAwesomeIcon icon={faWifi} size="2x" color="#167d26" />
           </CardTitle>
           <CardSubtitle className="card-subtitle">Remote Control</CardSubtitle>
-          <CardText style={{ fontSize: "2vh", color: "grey" }}>
+          <CardText style={{ fontSize: "1rem", color: "grey" }}>
             <ul>Without going to the parcel from any location</ul>
           </CardText>
         </Card>
@@ -40,7 +40,7 @@ const FeaturesSection = ({ children }) => {
           <CardSubtitle className="card-subtitle">
             Fast and efficient
           </CardSubtitle>
-          <CardText style={{ fontSize: "2vh", color: "grey" }}>
+          <CardText style={{ fontSize: "1rem", color: "grey" }}>
             <ul>Fully optimized application Easy to use</ul>
           </CardText>
         </Card>
@@ -52,7 +52,7 @@ const FeaturesSection = ({ children }) => {
           <CardSubtitle className="card-subtitle">
             Notifications warning
           </CardSubtitle>
-          <CardText style={{ fontSize: "2vh", color: "grey" }}>
+          <CardText style={{ fontSize: "1rem", color: "grey" }}>
             <ul>Notifies users of the possible appearance of the disease</ul>
           </CardText>
         </Card>
@@ -64,7 +64,7 @@ const FeaturesSection = ({ children }) => {
           <CardSubtitle className="card-subtitle">
             Responsive design
           </CardSubtitle>
-          <CardText style={{ fontSize: "2vh", color: "grey" }}>
+          <CardText style={{ fontSize: "1rem", color: "grey" }}>
             <ul>View your information on your laptop, tablet or smartphone.</ul>
           </CardText>
         </Card>
@@ -80,7 +80,7 @@ const FeaturesSection = ({ children }) => {
           <CardSubtitle className="card-subtitle">
             Availability of data
           </CardSubtitle>
-          <CardText style={{ fontSize: "2vh", color: "grey" }}>
+          <CardText style={{ fontSize: "1rem", color: "grey" }}>
             <ul>Dashboard with icons, charts, and tables</ul>
           </CardText>
         </Card>
@@ -90,7 +90,7 @@ const FeaturesSection = ({ children }) => {
             <FontAwesomeIcon icon={faMedkit} size="2x" color="#167d26" />
           </CardTitle>
           <CardSubtitle className="card-subtitle">Help</CardSubtitle>
-          <CardText style={{ fontSize: "2vh", color: "grey" }}>
+          <CardText style={{ fontSize: "1rem", color: "grey" }}>
             <ul>Earn savings in the use of chemicals, fuels and water</ul>
           </CardText>
         </Card>

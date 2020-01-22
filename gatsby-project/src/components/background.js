@@ -23,7 +23,7 @@ const BackgroundSection = ({ className }) => (
       // Set ImageData.
       const imageData = data.desktop.childImageSharp.fluid
       return (
-        <div className={navbarStyles.overlay} sx={{ height: "50vh" }}>
+        <div className={navbarStyles.overlay} sx={{ height: "40vh" }}>
           <BackgroundImage
             Tag="section"
             className={className}
@@ -34,10 +34,6 @@ const BackgroundSection = ({ className }) => (
               <p style={{ fontSize: "5rem" }}>eAgrar</p>
               <p>New way of agriculture</p>
             </StyledInnerWrapper>
-            <div className={navbarStyles.thimLineEffect}>
-              <div className={navbarStyles.imageCut}></div>
-              <div className={navbarStyles.imageCut}></div>
-            </div>
           </BackgroundImage>
         </div>
       )

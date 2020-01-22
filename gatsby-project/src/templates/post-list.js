@@ -8,25 +8,25 @@ import { graphql } from "gatsby"
 import PaginationLinks from "../components/paginationLinks"
 
 const postList = props => {
-  const posts = props.data.allMdx.edges
+  const posts = props.data.posts
   const { currentPage, numberOfPages } = props.pageContext
   return (
     <Layout pageName="Blog">
       <SEO title="Blog" />
 
-      <Row style={{ margin: "auo", padding: "1vh" }}>
+      <Row style={{ margin: "auto", padding: "2vh", paddingTop: "3vh" }}>
         <Col md="8">
-          <div sx={{}}>
-            {posts.map(({ node }) => (
+          <div>
+            {posts.edges.map(({ node }) => (
               <Post
-                key={node.excerpt}
-                title={node.frontmatter.title}
-                author={node.frontmatter.author}
-                date={node.frontmatter.date}
-                slug={node.fields.slug}
-                body={node.excerpt}
-                fluid={node.frontmatter.image.childImageSharp.fluid}
-                tags={node.frontmatter.tags}
+                key={node.id}
+                title={node.title}
+                author={node.author}
+                date={node.date}
+                slug={node.slug}
+                body={node.body.json}
+                fluid={node.image.fluid}
+                category={node.category}
               />
             ))}
             <PaginationLinks
@@ -45,34 +45,31 @@ const postList = props => {
 
 export const postListQuery = graphql`
   query postListQuery($skip: Int!, $limit: Int!) {
-    allMdx(
-      filter: { fileAbsolutePath: { regex: "//content/posts//" } }
-      sort: { fields: frontmatter___date, order: DESC }
+    posts: allContentfulBlogPosts(
+      sort: { order: DESC, fields: date }
       limit: $limit
       skip: $skip
     ) {
       edges {
         node {
           id
-          frontmatter {
-            title
-            date
-            author
-            tags
-            image {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
+          title
+          slug
+          date(formatString: "DD-M-YYYY")
+          category
+          author
+          body: childContentfulBlogPostsBodyRichTextNode {
+            json
+            body
+          }
+          image {
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
-          fields {
-            slug
-          }
-          excerpt
         }
       }
+      totalCount
     }
   }
 `

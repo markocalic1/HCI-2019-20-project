@@ -12,13 +12,13 @@ import {
 import Img from "gatsby-image"
 import { slugify } from "../utils/utilityFunctions"
 
-const Post = ({ title, author, date, slug, body, fluid, tags }) => {
+const Post = ({ title, author, date, slug, body, fluid, category }) => {
   return (
     <Card sx={{ marginBottom: "2vh" }}>
       <Link to={slug}>
         <Img
           sx={{
-            maxHeight: "40vh",
+            maxHeight: "53vh",
           }}
           className="card-image-top"
           fluid={fluid}
@@ -42,7 +42,10 @@ const Post = ({ title, author, date, slug, body, fluid, tags }) => {
           <span>{date} by </span>
           <span>{author}</span>
         </CardSubtitle>
-        <CardText>{body}</CardText>
+
+        <CardText>
+          {body.content[0].content[0].value.slice(0, 150) + "..."}
+        </CardText>
         <ul
           sx={{
             marginLeft: "0",
@@ -51,22 +54,20 @@ const Post = ({ title, author, date, slug, body, fluid, tags }) => {
             listStyle: "none",
           }}
         >
-          {tags.map(tag => (
-            <li key={tag}>
-              <Link to={`/tag/${slugify(tag)}`}>
-                <Badge
-                  sx={{
-                    backgroundColor: "#167d26",
-                    margin: "2px",
-                    fontSize: "1.5vh",
-                    padding: "0.35rem",
-                  }}
-                >
-                  {tag.toUpperCase()}
-                </Badge>
-              </Link>
-            </li>
-          ))}
+          <li key={category}>
+            <Link to={`/category/${slugify(category)}`}>
+              <Badge
+                sx={{
+                  backgroundColor: "#167d26",
+                  margin: "2px",
+                  fontSize: "1.5vh",
+                  padding: "0.35rem",
+                }}
+              >
+                {category.toUpperCase()}
+              </Badge>
+            </Link>
+          </li>
         </ul>
         <Link
           to={slug}

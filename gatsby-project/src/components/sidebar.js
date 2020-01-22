@@ -9,40 +9,37 @@ import { slugify } from "../utils/utilityFunctions"
 const Sidebar = props => {
   const data = useStaticQuery(graphql`
     {
-      allMdx(
-        filter: {
-          fileAbsolutePath: { regex: "//content/posts//" }
-          frontmatter: { title: { ne: "true" } }
-        }
-        sort: { fields: frontmatter___date, order: DESC }
+      posts: allContentfulBlogPosts(
+        sort: { fields: date, order: DESC }
         limit: 3
       ) {
-        posts: edges {
+        edges {
           post: node {
             id
-            frontmatter {
-              title
-
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 300) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
-              }
+            title
+            slug
+            date(formatString: "DD-M-YYYY")
+            category
+            author
+            body: childContentfulBlogPostsBodyRichTextNode {
+              body
+              json
             }
-            fields {
-              slug
+            image {
+              fluid {
+                ...GatsbyContentfulFluid_withWebp
+              }
             }
           }
         }
-        tagsRow: distinct(field: frontmatter___tags)
+
+        categories: distinct(field: category)
       }
     }
   `)
 
-  const posts = data.allMdx.posts
-  const tagsRow = data.allMdx.tagsRow
+  const posts = data.posts.edges
+  const categories = data.posts.categories
 
   return (
     <>
@@ -54,17 +51,17 @@ const Sidebar = props => {
             </CardTitle>
 
             <div style={{ display: "inline-grid" }}>
-              {tagsRow.map(tag => (
+              {categories.map(category => (
                 <Link
                   style={{
                     textDecoration: "none",
                     marginX: "10px",
                     color: "#167d26",
                   }}
-                  to={`/tag/${slugify(tag)}`}
-                  key={tag}
+                  to={`/category/${slugify(category)}`}
+                  key={category}
                 >
-                  {tag}
+                  {category}
                 </Link>
               ))}
             </div>
@@ -93,11 +90,8 @@ const Sidebar = props => {
             <div>
               {posts.map(({ post }) => (
                 <Card key={post.id} className="mb-1">
-                  <Link to={post.fields.slug}>
-                    <Img
-                      className="card-image-top"
-                      fluid={post.frontmatter.image.childImageSharp.fluid}
-                    />
+                  <Link to={post.slug}>
+                    <Img className="card-image-top" fluid={post.image.fluid} />
                   </Link>
                   <CardBody style={{ padding: "1px" }}>
                     <CardTitle sx={{ padding: "0.30rem" }}>
@@ -108,9 +102,9 @@ const Sidebar = props => {
                           fontSize: "0.7rem",
                           color: "#167d26",
                         }}
-                        to={post.fields.slug}
+                        to={post.slug}
                       >
-                        {post.frontmatter.title}
+                        {post.title}
                       </Link>
                     </CardTitle>
                   </CardBody>

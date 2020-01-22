@@ -20,14 +20,13 @@ import {
   faFacebookF,
 } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
-import { MDXProvider } from "@mdx-js/react"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const baseUrl = "https://eagrar.netlify.com/"
 
 class SinglePost extends Component {
   render() {
-    const post = this.props.data.mdx.frontmatter
+    const post = this.props.data.post
     return (
       <div>
         <Layout pageName="Blog">
@@ -39,7 +38,7 @@ class SinglePost extends Component {
                   <CardTitle
                     style={{
                       fontWeight: "bold",
-                      fontSize: "4vh",
+                      fontSize: "2.5rem",
                       lineHeight: "1",
                     }}
                   >
@@ -47,36 +46,30 @@ class SinglePost extends Component {
                   </CardTitle>
                   <Img
                     className="card-image-top"
-                    fluid={post.image.childImageSharp.fluid}
-                    sx={{ height: "54vh" }}
+                    fluid={post.image.fluid}
+                    sx={{ height: "45vh" }}
                   ></Img>
                   <CardBody style={{ paddingLeft: "0" }}>
                     <CardSubtitle>
                       <span className="text-info">{post.date}</span> by{""}
                       <span className="text-info"> {post.author}</span>
                     </CardSubtitle>
-                    <p>
-                      <MDXProvider>
-                        <MDXRenderer>{this.props.data.mdx.body}</MDXRenderer>
-                      </MDXProvider>
-                    </p>
+                    <div>{documentToReactComponents(post.body.json)}</div>
                     <ul className="post-tags" style={{ marginLeft: "0" }}>
-                      {post.tags.map(tag => (
-                        <Link
-                          to={`/tag/${slugify(tag)}`}
-                          style={{ padding: "2px" }}
+                      <Link
+                        to={`/category/${slugify(post.category)}`}
+                        style={{ padding: "2px" }}
+                      >
+                        <Badge
+                          color="primary"
+                          sx={{
+                            margin: "auto",
+                            fontSize: "1.5vh",
+                          }}
                         >
-                          <Badge
-                            color="primary"
-                            sx={{
-                              margin: "auto",
-                              fontSize: "1.5vh",
-                            }}
-                          >
-                            {tag}
-                          </Badge>
-                        </Link>
-                      ))}
+                          {post.category}
+                        </Badge>
+                      </Link>
                     </ul>
                   </CardBody>
                 </Card>
@@ -87,7 +80,7 @@ class SinglePost extends Component {
                       href={
                         "https://www.facebook.com/sharer/sharer.php?u=" +
                         baseUrl +
-                        this.props.data.mdx.fields.slug
+                        post.slug
                       }
                       target="_blank"
                       rel="noopener noreferrer"
@@ -99,9 +92,7 @@ class SinglePost extends Component {
 
                     <a
                       href={
-                        "https://twitter.com/share?url=" +
-                        baseUrl +
-                        this.props.data.mdx.fields.slug
+                        "https://twitter.com/share?url=" + baseUrl + post.slug
                       }
                       target="_blank"
                       rel="noopener noreferrer"
@@ -115,7 +106,7 @@ class SinglePost extends Component {
                       href={
                         "https://www.linkedin.com/shareArtcle?url=" +
                         baseUrl +
-                        this.props.data.mdx.fields.slug
+                        post.slug
                       }
                       target="_blank"
                       rel="noopener noreferrer"
@@ -141,25 +132,20 @@ export default SinglePost
 
 export const postQuery = graphql`
   query blogPostBySlug($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
+    post: contentfulBlogPosts(slug: { eq: $slug }) {
       id
-      body
-      excerpt
-      frontmatter {
-        title
-        author
-        date
-        tags
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
+      body {
+        json
       }
-      fields {
-        slug
+      slug
+      title
+      date(formatString: "DD-M-YYYY")
+      category
+      author
+      image {
+        fluid(quality: 90) {
+          ...GatsbyContentfulFluid_withWebp
+        }
       }
     }
   }

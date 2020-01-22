@@ -9,7 +9,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
   const nextPage = "/blog/" + (currentPage + 1).toString()
 
   return (
-    <Pagination style={{ marginLeft: "0px" }}>
+    <Pagination style={{ marginLeft: "0px", color: "#55bb66" }}>
       {isFirst ? (
         <PaginationItem disabled>
           <PaginationLink previous href="/"></PaginationLink>
@@ -22,7 +22,10 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
       {Array.from({ length: numberOfPages }, (_, i) =>
         currentPage === i + 1 ? (
           <PaginationItem active key={`page-number${i + 1}`}>
-            <PaginationLink href={`/${i === 0 ? "blog/" : "blog/" + (i + 1)}`}>
+            <PaginationLink
+              href={`/${i === 0 ? "blog/" : "blog/" + (i + 1)}`}
+              style={{ backgroundColor: "#157d26" }}
+            >
               {i + 1}
             </PaginationLink>
           </PaginationItem>

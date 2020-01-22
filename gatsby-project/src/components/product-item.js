@@ -61,13 +61,17 @@ export default class ProductList extends Component {
               <Col>
                 <Row
                   className="mx-auto justify-content-center px-2"
-                  style={{ width: "fit-content" }}
+                  style={{
+                    width: "fit-content",
+                    justifyContent: "center",
+                    margin: "auto",
+                  }}
                 >
                   <div
                     className="searchbar"
                     style={{
                       height: "38px",
-                      margin: "auto",
+                      marginTop: "35px",
                       paddingTop: "10px",
                     }}
                   >
