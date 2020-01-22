@@ -7,7 +7,7 @@ import Sidebar from "../components/sidebar"
 import { Link } from "gatsby"
 
 const tagsPage = ({ pageContext }) => {
-  const { tags, tagPostCounts } = pageContext
+  const { categories, categoryPostCounts } = pageContext
   return (
     <Layout pageName="Blog">
       <SEO title="Tags" keywords="tags" />
@@ -15,11 +15,11 @@ const tagsPage = ({ pageContext }) => {
         <Col md="8">
           <div style={{ margin: "5px" }}>
             <ul style={{ display: "inline-grid" }}>
-              {tags.map(tag => (
-                <Link key={tag} style={{ marginBottom: "10px" }}>
-                  <Button color="primary" href={`/tag/${slugify(tag)}`}>
-                    {tag} <Badge color="light"></Badge>
-                    {tagPostCounts[tag]}
+              {categories.map(category => (
+                <Link key={category} style={{ marginBottom: "10px" }}>
+                  <Button color="primary" href={`/tag/${slugify(category)}`}>
+                    {category} <Badge color="light"></Badge>
+                    {categoryPostCounts[category]}
                   </Button>
                 </Link>
               ))}
