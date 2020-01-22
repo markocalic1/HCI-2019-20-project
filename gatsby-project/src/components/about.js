@@ -6,7 +6,7 @@ const AboutSection = ({ children }) => {
     <div Tag="section" className="container mt-4 pb-5">
       <div className="row">
         <div className=" col-md-12" style={{ alignItems: "center" }}>
-          <Slideshow></Slideshow>
+          {/* <Slideshow></Slideshow> */}
         </div>
       </div>
     </div>
