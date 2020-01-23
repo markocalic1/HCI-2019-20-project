@@ -50,7 +50,7 @@ class SinglePost extends Component {
                     sx={{ height: "45vh" }}
                   ></Img>
                   <CardBody style={{ paddingLeft: "0" }}>
-                    <CardSubtitle>
+                    <CardSubtitle style={{ color: "#47ad57" }}>
                       <span className="text-info">{post.date}</span> by{""}
                       <span className="text-info"> {post.author}</span>
                     </CardSubtitle>
