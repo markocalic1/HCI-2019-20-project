@@ -47,7 +47,7 @@ const Sidebar = props => {
         <Card className="mb-2">
           <CardBody>
             <CardTitle className="text-canter text-uppercase ">
-              Filter by Tags
+              Filter by Category
             </CardTitle>
 
             <div style={{ display: "inline-grid" }}>

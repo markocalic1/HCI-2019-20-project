@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import StyledBackgroundSection from "../components/background"
 import AboutSection from "../components/about"
 import FeaturesSection from "../components/features"
+import SupportSection from "../components/supportsection"
 
 const IndexPage = ({ data }) => {
   return (
@@ -14,7 +15,7 @@ const IndexPage = ({ data }) => {
         <SEO title="Naslovna" />
         <StyledBackgroundSection></StyledBackgroundSection>
         <FeaturesSection></FeaturesSection>
-        <AboutSection></AboutSection>
+        <SupportSection></SupportSection>
       </Layout>
     </div>
   )
