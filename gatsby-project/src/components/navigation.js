@@ -26,7 +26,12 @@ const NavLinks = ({ menuItems, pageName }) => (
       <NavItem>
         {menuItem.text === pageName ? (isCurrent = true) : (isCurrent = false)}
 
-        <NavLink key={menuItem.path} href={menuItem.path} active={isCurrent}>
+        <NavLink
+          key={menuItem.path}
+          href={menuItem.path}
+          active={isCurrent}
+          style={{ textAlign: "center" }}
+        >
           {menuItem.text}
         </NavLink>
       </NavItem>
@@ -42,7 +47,13 @@ const Navigation = ({ menuItems, pageName }) => {
     <div
       style={{ position: "fixed", top: "0px", width: "100%", zIndex: "10000" }}
     >
-      <Navbar color="light" className="navbar-dark bg-dark" light expand="md">
+      <Navbar
+        color="light"
+        className="navbar-dark bg-dark"
+        light
+        expand="md"
+        style={{ textAlign: "center" }}
+      >
         <NavbarBrand href="/" className="">
           <img src={mainLogo} height="50" className="m-auto" alt="fireSpot" />
           eAgrar
@@ -61,7 +72,11 @@ const Navigation = ({ menuItems, pageName }) => {
           >
             Cart
           </FontAwesomeIcon> */}
-          <Button href="/login" className={navbarStyles.signin}>
+          <Button
+            href="/login"
+            className={navbarStyles.signin}
+            style={{ textAlign: "center" }}
+          >
             SIGN IN
           </Button>
         </Collapse>
