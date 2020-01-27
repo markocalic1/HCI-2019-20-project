@@ -23,7 +23,7 @@ const FeaturesSection = ({ children }) => {
           margin: "0",
         }}
       >
-        <Card lg="6" className="icon-space col-md-3">
+        <Card lg="6" className="icon-space col-md-3 justify-content-center">
           <CardTitle className="icon">
             <FontAwesomeIcon icon={faWifi} size="2x" color="#167d26" />
           </CardTitle>
@@ -33,7 +33,7 @@ const FeaturesSection = ({ children }) => {
           </CardText>
         </Card>
 
-        <Card lg="6" className="icon-space col-md-3">
+        <Card lg="6" className="icon-space col-md-3 justify-content-center">
           <CardTitle className="icon">
             <FontAwesomeIcon icon={faRocket} size="2x" color="#167d26" />
           </CardTitle>
@@ -41,11 +41,14 @@ const FeaturesSection = ({ children }) => {
             Fast and efficient
           </CardSubtitle>
           <CardText style={{ fontSize: "1rem", color: "grey" }}>
-            <ul>Fully optimized application Easy to use</ul>
+            <ul>
+              Fully optimized application <br />
+              Easy to use
+            </ul>
           </CardText>
         </Card>
 
-        <Card sm="4" className="icon-space col-md-3">
+        <Card sm="4" className="icon-space col-md-3 justify-content-center">
           <CardTitle className="icon">
             <FontAwesomeIcon icon={faBell} size="2x" color="#167d26" />
           </CardTitle>
@@ -57,7 +60,7 @@ const FeaturesSection = ({ children }) => {
           </CardText>
         </Card>
 
-        <Card sm="4" className="icon-space col-md-3">
+        <Card sm="4" className="icon-space col-md-3 justify-content-center">
           <CardTitle className="icon">
             <FontAwesomeIcon icon={faMobileAlt} size="2x" color="#167d26" />
           </CardTitle>
@@ -69,7 +72,7 @@ const FeaturesSection = ({ children }) => {
           </CardText>
         </Card>
 
-        <Card className="icon-space col-md-3" sm="4">
+        <Card className="icon-space col-md-3 justify-content-center" sm="4">
           <CardTitle className="icon">
             <FontAwesomeIcon
               icon={faCloudDownloadAlt}
@@ -85,7 +88,7 @@ const FeaturesSection = ({ children }) => {
           </CardText>
         </Card>
 
-        <Card className="icon-space col-md-3" md="4">
+        <Card className="icon-space col-md-3 justify-content-center" md="4">
           <CardTitle className="icon">
             <FontAwesomeIcon icon={faMedkit} size="2x" color="#167d26" />
           </CardTitle>

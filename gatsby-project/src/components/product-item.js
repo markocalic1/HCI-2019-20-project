@@ -1,6 +1,16 @@
 import React, { Component } from "react"
-import { Row, Col, Input, FormControl } from "reactstrap"
+import {
+  Row,
+  Col,
+  Input,
+  FormControl,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+} from "reactstrap"
 import Product from "../templates/product"
+import { faSearch } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const getCategories = items => {
   let tempItems = items.map(items => {
@@ -75,27 +85,34 @@ export default class ProductList extends Component {
                       paddingTop: "10px",
                     }}
                   >
-                    <Input
-                      placeholder="Search products"
-                      onChange={e => {
-                        let tempItems = [...this.state.items]
+                    <InputGroup>
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <FontAwesomeIcon icon={faSearch} size="1x" />
+                        </InputGroupText>
+                      </InputGroupAddon>
+                      <Input
+                        placeholder="Search products"
+                        onChange={e => {
+                          let tempItems = [...this.state.items]
 
-                        let items = tempItems.filter(({ node }) =>
-                          node.title
-                            .toLowerCase()
-                            .includes(e.target.value.toLowerCase())
-                        )
-                        if (items.length > 0) {
-                          this.setState(() => {
-                            return { productItems: items }
-                          })
-                        } else {
-                          this.setState(() => {
-                            return { productItems: tempItems }
-                          })
-                        }
-                      }}
-                    />
+                          let items = tempItems.filter(({ node }) =>
+                            node.title
+                              .toLowerCase()
+                              .includes(e.target.value.toLowerCase())
+                          )
+                          if (items.length > 0) {
+                            this.setState(() => {
+                              return { productItems: items }
+                            })
+                          } else {
+                            this.setState(() => {
+                              return { productItems: tempItems }
+                            })
+                          }
+                        }}
+                      />
+                    </InputGroup>
                   </div>
                   <div style={{ textAlign: "center", paddingTop: "15px" }}>
                     <h6>Filter by category :</h6>
