@@ -26,11 +26,11 @@ const ProductList = () => {
             id
             frontmatter {
               name
-              prize
+              price
               description
               image {
                 childImageSharp {
-                  fluid {
+                  fluid(maxHeight: 400, maxWidth: 400, quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -47,7 +47,7 @@ const ProductList = () => {
   } = data
 
   return (
-    <div sx={{ textAlign: "-webkit-center" }}>
+    <div style={{ textAlign: "center", margin: "auto" }}>
       {products &&
         products.map(({ product }) => {
           return (
@@ -68,22 +68,19 @@ const ProductList = () => {
                   sx={{
                     margin: "auto",
                     width: "40vh",
-                    height: "40vh",
+                    height: "vh",
                   }}
                 />
-                <CardBody className="text-center">
+                <CardBody
+                  className="text-center"
+                  style={{ width: "40vh", height: "40vh" }}
+                >
                   <CardSubtitle className="h5">
-                    Prize: {product.frontmatter.prize}
+                    Prize: {product.frontmatter.price}
                   </CardSubtitle>
-                  <hr></hr>
-                  <CardText>{product.frontmatter.description}</CardText>
-                  <hr></hr>
-                  <CardText>{product.frontmatter.description}</CardText>
-                  <hr></hr>
-                  <CardText>{product.frontmatter.description}</CardText>
-                  <hr></hr>
-                  <CardText>{product.frontmatter.description}</CardText>
-                  <hr></hr>
+                  <CardText style={{ textAlign: "left", height: "20vh" }}>
+                    {product.frontmatter.description}
+                  </CardText>
 
                   <Button style={{ backgroundColor: "#167d26" }}>Order</Button>
                 </CardBody>

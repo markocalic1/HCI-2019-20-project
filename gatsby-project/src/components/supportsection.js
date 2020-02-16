@@ -34,7 +34,10 @@ const SupportSection = ({ children }) => {
 
   return (
     <div className="section py-3 mt-5" style={{ backgroundColor: "#343a40" }}>
-      <div className="section-center mx-5">
+      <div
+        className="section-center mx-5"
+        style={{ borderBottom: "1px solid white" }}
+      >
         <div
           className="text-center "
           style={{ color: "white", paddingTop: "25px", fontSize: "1.5rem" }}

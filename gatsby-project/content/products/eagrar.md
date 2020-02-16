@@ -1,7 +1,7 @@
 ---
 name: "eAgrar start"
-prize: "100$"
+price: "1000 HRK"
 image: "./eagrarshow4.jpeg"
-unlisted: "false" 
-description: "mjerenje vlaznosti zemljis"
+unlisted: "false"
+description: "Mjerenje temperature,vlažnosti i pritiska zraka,temperature i vlažnosti tla. Real-time podatci na serveru.Autonomija rada do 2 god."
 ---

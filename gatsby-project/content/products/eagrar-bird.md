@@ -1,7 +1,7 @@
 ---
 name: "eAgrar bird"
-prize: "100$"
-image: "./eagrarshow4.jpeg"
-unlisted: "false" 
-description: "bgakfksjbvkjsabjkvbsavbsjvbjs"
+price: "300 HRK"
+image: "./eagrarBird.jpeg"
+unlisted: "false"
+description: "Mjerenje vlažnosti i temperature zemljišta. Trajanje baterije:2 godine"
 ---
