@@ -74,7 +74,7 @@ const Post = ({ title, author, date, slug, body, fluid, category }) => {
           className="btn  float-right "
           style={{ backgroundColor: "#167d26", color: "white" }}
         >
-          Read more ->
+          Read more...
         </Link>
       </CardBody>
     </Card>

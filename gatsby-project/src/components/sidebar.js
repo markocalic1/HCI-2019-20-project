@@ -71,7 +71,7 @@ const Sidebar = props => {
         <Card className="mb-2">
           <CardBody>
             <CardTitle className="text-canter text-uppercase ">
-              Advertisment
+              Advertisement
             </CardTitle>
 
             <img
@@ -84,7 +84,7 @@ const Sidebar = props => {
         <Card className="mb-2">
           <CardBody>
             <CardTitle className="text-canter text-uppercase ">
-              Recent Post:
+              Recent Posts:
             </CardTitle>
 
             <div>

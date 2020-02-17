@@ -62,7 +62,7 @@ export default class MyForm extends React.Component {
                   <Input
                     type="textarea"
                     name="message"
-                    placeholder="Your messsage......"
+                    placeholder="Your messsage..."
                     style={{ marginBottom: "5px" }}
                   />
                   {status === "SUCCESS" ? (

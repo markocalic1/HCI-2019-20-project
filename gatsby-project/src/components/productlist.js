@@ -73,12 +73,12 @@ const ProductList = () => {
                 />
                 <CardBody
                   className="text-center"
-                  style={{ width: "40vh", height: "40vh" }}
+                  style={{ width: "40vh", height: "60vh"}}
                 >
                   <CardSubtitle className="h5">
                     Prize: {product.frontmatter.price}
                   </CardSubtitle>
-                  <CardText style={{ textAlign: "left", height: "20vh" }}>
+                  <CardText style={{ textAlign: "center", height: "35vh" }}>
                     {product.frontmatter.description}
                   </CardText>
 
