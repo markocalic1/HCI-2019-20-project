@@ -5,27 +5,20 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import StyledBackgroundSection from "../components/background"
 import AboutSection from "../components/about"
-import FooterContainer from "../components/footer"
+import FeaturesSection from "../components/features"
+import SupportSection from "../components/supportsection"
 
 const IndexPage = ({ data }) => {
-
- 
-    return (
-    <div sx={{display:"flex",
-            flexDirection:"column"
-              
-        }} >
-        <Layout>
-         <SEO title="Naslovna" />
-        </Layout>
+  return (
+    <div style={{ width: "100%" }}>
+      <Layout pageName="Home">
+        <SEO title="Naslovna" />
         <StyledBackgroundSection></StyledBackgroundSection>
-        <AboutSection></AboutSection>
-        <FooterContainer></FooterContainer>
-       
+        <FeaturesSection></FeaturesSection>
+        <SupportSection></SupportSection>
+      </Layout>
     </div>
   )
 }
 
 export default IndexPage
-
-

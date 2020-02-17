@@ -1,131 +1,131 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import React ,{ Component } from "react"
+import { jsx } from "theme-ui"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Link, graphql, StaticQuery } from "gatsby"
-import StyledBackgroundSection from "../components/background"
-import Img from 'gatsby-image'
-import navbarStyles from "../components/navbar.module.css"
+import { graphql, StaticQuery } from "gatsby"
 import Post from "../components/post"
-import {Row ,Col} from 'reactstrap'
+import { Row, Col } from "reactstrap"
+import Sidebar from "../components/sidebar"
+import React from "react"
+import PaginationLinks from "../components/paginationLinks"
 
 const blogQuery = graphql`
-{
-  allMdx(filter: {fileAbsolutePath: {regex: "//content/posts//"}, frontmatter: {title: {ne: "true"}}}) {
-    posts: edges {
-      post: node {
-        id
-        frontmatter {
+  {
+    posts: allContentfulBlogPosts(
+      sort: { fields: date, order: DESC }
+      limit: 3
+    ) {
+      edges {
+        post: node {
+          id
           title
-          date
-          path
+          slug
+          date(formatString: "DD-M-YYYY")
+          category
           author
-          image{
-            childImageSharp{
-              fluid(quality: 90, maxWidth: 1920) {
-                  ...GatsbyImageSharpFluid_withWebp
-              }
+          body: childContentfulBlogPostsBodyRichTextNode {
+            body
+            json
+          }
+          image {
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
-          tags
         }
-        excerpt
       }
+      totalCount
     }
   }
-}
 `
-const BlogPage = () => (
+const BlogPage = () => {
+  const postsPerPage = 3
+  let numberOfPages
 
-        <>
-          <div>
-            
-            <Layout>
-              <SEO title="Blog" />
-                    Blog page 
-            </Layout>
-              <Row sx={{margin:"auto" ,padding:"5vh"}}>
-                <Col md="8">
-                  <div sx={{ }}>
-                    
-                    <StaticQuery
-                      query ={blogQuery}
-                      render={data =>{
-                        return (
-                          <div  >
-                            {data.allMdx.posts.map(({post}) =>(
-                              <Post  
-                              title={post.frontmatter.title }
-                              author={post.frontmatter.author}
-                              date={post.frontmatter.date}
-                              path={post.frontmatter.path}
-                              body={post.excerpt}
-                              fluid={post.frontmatter.image.childImageSharp.fluid}
-                              tags={post.frontmatter.tags}
-                              />
-                            ))}
-                          </div>
-                        )
-                      }}
-                    />
-                  </div>
-                </Col>
-                <Col md="4">
-                    <div sx={{
-                      width:"100%" , 
-                      height:"100%" ,
-                      backgroundColor:"#e5e5e5b5",
-                      margin:""}} >
+  return (
+    <>
+      <div>
+        <Layout pageName="Blog">
+          <SEO title="Blog" />
 
-                    </div>
-                </Col>
-              </Row>
+          <Row style={{ margin: "auto", padding: "2vh", paddingTop: "3vh" }}>
+            <Col md="8">
+              <div sx={{}}>
+                <StaticQuery
+                  query={blogQuery}
+                  render={data => {
+                    numberOfPages = Math.ceil(
+                      data.posts.totalCount / postsPerPage
+                    )
+                    return (
+                      <div>
+                        {data.posts.edges.map(({ post }) => (
+                          <Post
+                            key={post.id}
+                            title={post.title}
+                            author={post.author}
+                            date={post.date}
+                            slug={post.slug}
+                            body={post.body.json}
+                            fluid={post.image.fluid}
+                            category={post.category}
+                          />
+                        ))}
+                        <PaginationLinks
+                          currentPage={1}
+                          numberOfPages={numberOfPages}
+                        ></PaginationLinks>
+                      </div>
+                    )
+                  }}
+                />
+              </div>
+            </Col>
+            <Col md="4">
+              <Sidebar />
+            </Col>
+          </Row>
+        </Layout>
+      </div>
+    </>
+  )
+}
 
-            
+export default BlogPage
 
-          </div>
-          
-         
-        </>
-      )
-   
-  
-  export default BlogPage
-  
-  // export const pageQuery = graphql`
-  //   query {
-  //     allWordpressPage {
-  //       edges {
-  //         node {
-  //           id
-  //           title
-  //           excerpt
-  //           slug
-  //           date(formatString: "MMMM D, YYYY")
-  //         }
-  //       }
-  //     }
-  //     allWordpressPost {
-  //       edges {
-  //         node {
-  //           title
-  //           excerpt
-  //           slug
-  //           date(formatString: "MMMM D, YYYY")
-  //           categories {
-  //             name
-  //             id
-  //           }
-  //         }
-  //       }
-  //     }
-  //     desktop: file(relativePath: {eq: "background.webp"}) {
-  //       childImageSharp {
-  //         fluid(quality: 90, maxWidth: 1920) {
-  //           ...GatsbyImageSharpFluid_withWebp         
-  //         }
-  //       }
-  //     }
-  //   }
-  // `
+// export const pageQuery = graphql`
+//   query {
+//     allWordpressPage {
+//       edges {
+//         node {
+//           id
+//           title
+//           excerpt
+//           slug
+//           date(formatString: "MMMM D, YYYY")
+//         }
+//       }
+//     }
+//     allWordpressPost {
+//       edges {
+//         node {
+//           title
+//           excerpt
+//           slug
+//           date(formatString: "MMMM D, YYYY")
+//           categories {
+//             name
+//             id
+//           }
+//         }
+//       }
+//     }
+//     desktop: file(relativePath: {eq: "background.webp"}) {
+//       childImageSharp {
+//         fluid(quality: 90, maxWidth: 1920) {
+//           ...GatsbyImageSharpFluid_withWebp
+//         }
+//       }
+//     }
+//   }
+// `

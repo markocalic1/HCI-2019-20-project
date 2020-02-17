@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react"
+
 import {
   Collapse,
   Navbar,
@@ -6,85 +7,84 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink
 
-  } from 'reactstrap';
+  NavLink,
+} from "reactstrap"
 
-  import 'bootstrap/dist/css/bootstrap.min.css';
-  import mainLogo from"../images/logo.png";
-  import { Button } from 'reactstrap';
-  import navbarStyles from "./navbar.module.css"
-  import { globalHist as history } from '@reach/router'
-import Link from 'react-router'
-import PropTypes from 'prop-types'
+import "bootstrap/dist/css/bootstrap.min.css"
+import mainLogo from "../images/logo.webp"
+import { Button } from "reactstrap"
+import navbarStyles from "./style/navbar.module.css"
+import "./style/features.css"
+import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import Logout from "../components/logout"
+let isCurrent = false
 
-// const isCurrent =(path,href) => {
-// if (href==="/"){
-
-// }
-// else{
-//   href+="/"
-// }
-//   return (path===href) ? true : false
-// }
-
-const isPartiallyActive = ({
-  isPartiallyCurrent
-}) => {
-  return isPartiallyCurrent
-    ? true
-    : false
-}
-
-const isActive = ({ isCurrent }) => {
-  return isCurrent ?  { className: 'navlink-active navlink' }
-  : { className: 'navlink' }
-}
-
-const NavLinks = ({ menuItems,props }) => (
+const NavLinks = ({ menuItems, pageName }) => (
   <>
-    
     {menuItems.map(menuItem => (
-      
-      <NavItem >
-        <NavLink tag={Link} activeClassName="active" href={menuItem.path}>{menuItem.text}</NavLink>
-        
+      <NavItem>
+        {menuItem.text === pageName ? (isCurrent = true) : (isCurrent = false)}
 
+        <NavLink
+          key={menuItem.path}
+          href={menuItem.path}
+          active={isCurrent}
+          style={{ textAlign: "center" }}
+        >
+          {menuItem.text}
+        </NavLink>
       </NavItem>
     ))}
   </>
 )
 
-const Navigation = ({ menuItems }) => {
-  
-    const [isOpen, setIsOpen] = useState(false);
+const Navigation = ({ menuItems, pageName }) => {
+  const [isOpen, setIsOpen] = useState(false)
 
-    const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => setIsOpen(!isOpen)
   return (
-    <div>
-        <Navbar color="light" className="navbar-dark bg-dark" light expand="md">
-        <NavbarBrand href="/" className=""><img  src={mainLogo} height="50" className="m-auto" alt="fireSpot"/>eAgrar</NavbarBrand>
+    <div
+      style={{ position: "fixed", top: "0px", width: "100%", zIndex: "10000" }}
+    >
+      <Navbar
+        color="light"
+        className="navbar-dark bg-dark"
+        light
+        expand="md"
+        style={{ textAlign: "center" }}
+      >
+        <NavbarBrand href="/" className="">
+          <img src={mainLogo} height="50" className="m-auto" alt="fireSpot" />
+          eAgrar
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mx-auto text-white" navbar>
-             <NavLinks menuItems={menuItems} />
+            <NavLinks menuItems={menuItems} pageName={pageName} />
           </Nav>
-          <Button href="/login" className={navbarStyles.signin }>LOG IN</Button>
-          <Logout></Logout>
-          </Collapse>
-        </Navbar>
-      </div>
-    
-      
-      
-      
-  )
-}
 
-Navigation.propTypes = {
-  children: PropTypes.node.isRequired,
+          {/* <FontAwesomeIcon
+            icon={faCartArrowDown}
+            size="1x"
+            color="white"
+            className="cart-icon snipcart-checkout"
+            style={{ marginRight: "10px" }}
+          >
+            Cart
+          </FontAwesomeIcon> */}
+          <Button
+            href="/login"
+            className={navbarStyles.signin}
+            style={{ textAlign: "center" }}
+          >
+            SIGN IN
+          </Button>
+        </Collapse>
+      </Navbar>
+    </div>
+  )
 }
 
 export default Navigation

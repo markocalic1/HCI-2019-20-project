@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `eAgrar`,
@@ -15,47 +19,62 @@ module.exports = {
         text: "Products",
         path: "/products",
       },
+      // {
+      //   text: "Stations",
+      //   path: "/stations",
+      // },
       {
-        text: "Stations",
-        path: "/stations",
-      },
-      {
-        text: "Sales",
-        path: "/sales",
+        text: "Shop",
+        path: "/shop",
       },
       {
         text: "Contact",
         path: "/contact",
       },
-     
-     
     ],
-    author: `@gatsbyjs`,
+    author: `MC`,
   },
   plugins: [
-    {
-      resolve: `gatsby-source-wordpress`,
-      options: {
-        /*
-         * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
-         * Example : 'dev-gatbsyjswp.pantheonsite.io' or 'www.example-site.com'
-         */
-        baseUrl: `blog.eagrar.eu/`,
-        protocol: `http`,
-        hostingWPCOM: false,
-        useACF: false,
-        
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-wordpress`,
+    //   options: {
+    //     /*
+    //      * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
+    //      * Example : 'dev-gatbsyjswp.pantheonsite.io' or 'www.example-site.com'
+    //      */
+    //     baseUrl: `blog.eagrar.eu/`,
+    //     protocol: `http`,
+    //     hostingWPCOM: false,
+    //     useACF: false,
+
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
       },
     },
+
     "gatsby-plugin-theme-ui",
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-catch-links`,
+    `gatsby-remark-smartypants`,
+    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-catch-links`,
+      options: {
+        excludePattern: /(excluded-link|external)/,
+      },
+    },
+
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
 
     {
       resolve: `gatsby-plugin-mdx`,
@@ -69,6 +88,7 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
+          `gatsby-remark-smartypants`,
         ],
         plugins: [
           {
@@ -111,22 +131,39 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
-      },
-    },
+
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [],
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `eAgrar`,
+        short_name: `eAgrar`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#167d26`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
