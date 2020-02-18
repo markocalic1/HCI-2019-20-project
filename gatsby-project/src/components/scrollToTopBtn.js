@@ -63,9 +63,9 @@ export default class ScrollToTop extends Component {
           <div onClick={() => this.scrollToTop()}>
             <div
               className="btn"
-              style={{ borderRadius: "2px", backgroundColor: "#5656569c" }}
+              style={{ borderRadius: "4px", backgroundColor: "#167d26ba" }}
             >
-              <FontAwesomeIcon icon={faArrowUp} size="2x" color="#167d26" />
+              <FontAwesomeIcon icon={faArrowUp} size="2x" color="#eee" />
             </div>
           </div>
         )}
