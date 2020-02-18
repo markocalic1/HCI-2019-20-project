@@ -34,21 +34,19 @@ const Product = ({ id, title, description, price, fluid }) => {
         fluid={fluid}
       />
       <CardBody>
-        <CardTitle>
-          <Link
-            style={{
-              textDecoration: "none",
-              fontWeight: "bold",
-              fontSize: "1rem",
-              color: "#167d26",
-            }}
-          >
-            {title}
-          </Link>
+        <CardTitle
+          style={{
+            textDecoration: "none",
+            fontWeight: "bold",
+            fontSize: "1rem",
+            color: "#167d26",
+          }}
+        >
+          {title}
         </CardTitle>
-        <CardText style={{ lineHeight: "1rem", fontSize: "small" }}>
+        {/* <CardText style={{ lineHeight: "1rem", fontSize: "small" }}>
           {description}
-        </CardText>
+        </CardText> */}
       </CardBody>
       <CardFooter sx={{ fontWeight: "bold" }}>
         {price} HRK{" "}

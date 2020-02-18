@@ -16,6 +16,7 @@
     "@mdx-js/react": "^1.5.3",
     "@reach/router": "^1.2.1",
     "@theme-ui/presets": "^0.2.44",
+    "availity-reactstrap-validation": "^2.6.1",
     "babel-plugin-styled-components": "^1.10.6",
     "bootstrap": "^4.4.1",
     "gatsby": "^2.18.20",

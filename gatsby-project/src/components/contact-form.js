@@ -88,7 +88,7 @@ export default class MyForm extends React.Component {
           </Card>
         </div>
         <div className="col-md-6 ">
-          <Card style={{}}>
+          <Card style={{ minHeight: "400px" }}>
             <img
               src={blackLogo}
               height="120"
