@@ -55,7 +55,7 @@ const ProductList = () => {
               key={product.id}
               sx={{
                 display: "inline-flex",
-                padding: 4,
+                padding: 3,
               }}
             >
               <Card>
@@ -68,17 +68,22 @@ const ProductList = () => {
                   sx={{
                     margin: "auto",
                     width: "40vh",
-                    height: "vh",
                   }}
                 />
                 <CardBody
                   className="text-center"
-                  style={{ width: "40vh", height: "60vh"}}
+                  style={{ width: "40vh", height: "38vh" }}
                 >
                   <CardSubtitle className="h5">
                     Prize: {product.frontmatter.price}
                   </CardSubtitle>
-                  <CardText style={{ textAlign: "center", height: "35vh" }}>
+                  <CardText
+                    style={{
+                      textAlign: "left",
+                      height: "20vh",
+                      fontSize: "2.4vh",
+                    }}
+                  >
                     {product.frontmatter.description}
                   </CardText>
 
