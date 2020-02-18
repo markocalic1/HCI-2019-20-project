@@ -90,6 +90,7 @@ export default class MyForm extends React.Component {
             <img
               src={blackLogo}
               height="120"
+              width="120"
               className="m-auto"
               alt="blackLogo"
             />
