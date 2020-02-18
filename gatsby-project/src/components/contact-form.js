@@ -13,12 +13,10 @@ import {
   Card,
   CardBody,
   CardTitle,
-  CardImg,
 } from "reactstrap"
 import {
   faEnvelope,
   faPhone,
-  faMapMarkerAlt,
   faMapMarkedAlt,
 } from "@fortawesome/free-solid-svg-icons"
 

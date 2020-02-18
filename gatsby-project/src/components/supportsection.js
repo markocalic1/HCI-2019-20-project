@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Img from "gatsby-image"
 import "./style/features.css"
-import { Link } from "gatsby"
 
 const SupportSection = ({ children }) => {
   const { allFile } = useStaticQuery(

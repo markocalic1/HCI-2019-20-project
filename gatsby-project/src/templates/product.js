@@ -1,10 +1,8 @@
 /** @jsx jsx */
 import React, { useState } from "react"
 import { jsx } from "theme-ui"
-import { Link } from "gatsby"
 import {
   Card,
-  CardText,
   CardBody,
   CardTitle,
   CardFooter,

@@ -15,8 +15,8 @@ import mainLogo from "../images/logo.webp"
 import { Button } from "reactstrap"
 import navbarStyles from "./style/navbar.module.css"
 import "./style/features.css"
-import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 let isCurrent = false
 

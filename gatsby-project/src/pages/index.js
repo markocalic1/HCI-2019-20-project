@@ -4,7 +4,6 @@ import { jsx } from "theme-ui"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import StyledBackgroundSection from "../components/background"
-import AboutSection from "../components/about"
 import FeaturesSection from "../components/features"
 import SupportSection from "../components/supportsection"
 

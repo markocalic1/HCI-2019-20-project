@@ -23,7 +23,7 @@ const FooterContainer = ({ props }) => {
             style={{ padding: "4px" }}
           />
         </a>
-        <a>
+        <a href="" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon
             icon={faLinkedin}
             size="2x"
@@ -31,7 +31,7 @@ const FooterContainer = ({ props }) => {
             style={{ padding: "4px" }}
           />
         </a>
-        <a>
+        <a href="" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon
             icon={faInstagram}
             size="2x"
