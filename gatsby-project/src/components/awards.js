@@ -11,11 +11,6 @@ const Awards = ({ children }) => {
         allContentfulAwards {
           nodes {
             awardSvg {
-              svg {
-                originalContent
-                content
-                dataURI
-              }
               file {
                 fileName
                 url
