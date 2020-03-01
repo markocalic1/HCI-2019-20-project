@@ -32,7 +32,7 @@ const SupportSection = ({ children }) => {
   console.log(items)
 
   return (
-    <div className="section py-3 mt-5" style={{ backgroundColor: "#343a40" }}>
+    <div className="section py-3 " style={{ backgroundColor: "#343a40" }}>
       <div
         className="section-center mx-5"
         style={{ borderBottom: "1px solid white" }}

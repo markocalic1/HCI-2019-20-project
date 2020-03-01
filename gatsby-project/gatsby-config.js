@@ -60,6 +60,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-remark-smartypants`,
     `gatsby-plugin-netlify`,
+    `gatsby-transformer-inline-svg`,
     {
       resolve: `gatsby-plugin-catch-links`,
       options: {
@@ -151,6 +152,12 @@ module.exports = {
         gfm: true,
         // Plugins configs
         plugins: [],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {},
       },
     },
 
